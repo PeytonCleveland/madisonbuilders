@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 const HeaderLink = ({ text, href, active = false }) => {
   const router = useRouter();
   const isActive = router.pathname === href;
-  console.log(router.pathname, href);
   const className =
     isActive || active
       ? "text-indigo-900 font-semibold text-lg ml-16 my-0 self-center"

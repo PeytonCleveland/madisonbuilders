@@ -1,6 +1,8 @@
 import Image from "next/image";
 import HeaderLink from "../header-link";
 
+import { useState } from "react";
+
 const links = [
   { text: "Home", href: "/" },
   { text: "About", href: "/about" },
@@ -8,6 +10,10 @@ const links = [
 ];
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navStyle = isOpen
+    ? "opacity-100 flex w-screen h-screen bg-indigo-100 absolute top-0 left-0 z-50 transition-all duration-500 ease-in-out"
+    : "opacity-0 flex w-screen h-screen bg-indigo-100 absolute top-0 left-0 -z-10 transition-all duration-500 ease-in-out";
   return (
     <header className="container flex w-full h-20 justify-between items-center">
       <div className="flex">
@@ -29,10 +35,13 @@ const Header = () => {
           Let&apos;s Talk
         </button>
       </div>
-      <div className="flex items-center text-indigo-900 md:hidden">
+      <button
+        className="flex items-center text-indigo-900 border border-gray-300 rounded px-[1px] active:border-indigo-900 active:bg-indigo-100  md:hidden"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-10 w-10"
+          className="h-9 w-9"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -44,7 +53,8 @@ const Header = () => {
             d="M4 6h16M4 12h16M4 18h16"
           />
         </svg>
-      </div>
+      </button>
+      <div className={navStyle}>hello</div>
     </header>
   );
 };
