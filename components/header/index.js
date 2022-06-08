@@ -26,21 +26,21 @@ const Header = () => {
       <div className="hidden md:flex items-center">
         <HeaderLink text="Sign In" href="/sign-in" active />
         <button className="bg-indigo-900 text-white px-5 py-[5px] font-semibold text-lg rounded ml-12 hover:bg-indigo-800 hover:scale-105 duration-150">
-          Let's Talk
+          Let&apos;s Talk
         </button>
       </div>
       <div className="flex items-center text-indigo-900 md:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-10 w-10"
+          className="h-10 w-10"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M4 6h16M4 12h16M4 18h16"
           />
         </svg>
