@@ -21,6 +21,7 @@ const Home = () => {
         <video
           className="-mt-8 rounded-lg mb-8"
           controls
+          playsinline
           src="/stock.mov"
         ></video>
         <h3 className="text-white text-xl mb-2">
