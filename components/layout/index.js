@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="container">{children}</main>
+      <main>{children}</main>
     </div>
   );
 };
