@@ -92,6 +92,12 @@ const Header = () => {
           {links.map((link) => (
             <HeaderLink key={link.text} {...link} mobile />
           ))}
+          <button className="w-full border-2 border-indigo-900 text-indigo-900 text-2xl font-regular rounded-md py-2 mb-4">
+            Client portal
+          </button>
+          <button className="w-full bg-indigo-900 text-white text-2xl font-regular rounded-md py-[9px]">
+            Let&apos;s talk
+          </button>
         </div>
       </div>
     </header>

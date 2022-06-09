@@ -5,7 +5,7 @@ const HeaderLink = ({ text, href, active = false, mobile = false }) => {
   const router = useRouter();
   const isActive = router.pathname === href;
   const className = mobile
-    ? "text-indigo-900 font-semibold text-4xl text-left mb-6"
+    ? "text-indigo-900 font-semibold text-4xl text-left mb-8"
     : isActive || active
     ? "text-indigo-900 font-semibold text-lg ml-16 my-0 self-center"
     : "text-gray-500 font-semibold text-lg ml-16 my-0 self-center hover:text-indigo-900/80";
