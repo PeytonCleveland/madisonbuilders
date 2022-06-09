@@ -4,7 +4,7 @@ const Home = () => {
       <h1 className="text-indigo-900 text-3xl mb-2">
         Alabama&apos;s Premier <strong>Custom Home Builder</strong>
       </h1>
-      <h2 className="text-gray-600 font-sans font-light">
+      <h2 className="text-gray-700 font-sans font-light">
         Lorem ipsum dolor sit amet consectetor adpiscing elit sed do eiusmod
       </h2>
     </div>
