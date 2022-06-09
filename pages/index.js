@@ -22,7 +22,7 @@ const Home = () => {
           className="-mt-8 rounded-lg mb-8"
           controls
           playsinline
-          src="/stock.mov"
+          src="/stock.mov#t=0.001"
         ></video>
         <h3 className="text-white text-xl mb-10">
           Discover <strong>Our Difference</strong>
