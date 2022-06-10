@@ -8,7 +8,8 @@ const links = [
   { text: "Home", href: "/" },
   { text: "About", href: "/about" },
   { text: "Process", href: "/process" },
-  { text: "Work", href: "/work" }
+  { text: "Work", href: "/work" },
+  { text: "Blog", href: "/blog" }
 ];
 
 const Header = () => {
@@ -22,7 +23,7 @@ const Header = () => {
     ? "opacity-100 flex flex-col w-screen h-screen bg-indigo-100 absolute top-0 left-0 z-50 transition-all duration-500 ease-in-out p-4 pt-[21px]"
     : "opacity-0 flex flex-col w-screen h-screen bg-indigo-100 absolute -top-[900px] left-0 -z-10 transition-all duration-500 ease-in-out p-4 pt-[21px]";
   return (
-    <header className="container flex w-full h-20 justify-between items-center">
+    <header className="container flex w-full h-20 justify-between items-center fixed bg-white z-50">
       <div className="flex">
         <Image
           src="/madison-builders.png"
