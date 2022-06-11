@@ -10,11 +10,6 @@ const Home = () => {
     term: 30,
     downPayment: 25_000
   });
-  const [payment, setPayment] = useState(calculatePayment);
-
-  useEffect(() => {
-    setPayment(calculatePayment);
-  }, [mortgage]);
 
   const calculatePayment = () => {
     const apr = mortgage.rate / 1_200;
@@ -25,6 +20,12 @@ const Home = () => {
       (Math.pow(1 + apr, term) - 1);
     return payment;
   };
+
+  const [payment, setPayment] = useState(calculatePayment);
+
+  useEffect(() => {
+    setPayment(calculatePayment);
+  }, [mortgage]);
 
   return (
     <>
