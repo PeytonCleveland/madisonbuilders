@@ -1,8 +1,31 @@
-import Image from "next/image";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
+import Slider, { Range } from "rc-slider";
+import "rc-slider/assets/index.css";
 
 const Home = () => {
+  const [mortgage, setMortgage] = useState({
+    amount: 350_000,
+    rate: 3.5,
+    term: 30,
+    downPayment: 25_000
+  });
+  const [payment, setPayment] = useState(calculatePayment);
+
+  useEffect(() => {
+    setPayment(calculatePayment);
+  }, [mortgage]);
+
+  const calculatePayment = () => {
+    const apr = mortgage.rate / 1_200;
+    const term = mortgage.term * 12;
+    const loanAmount = mortgage.amount - mortgage.downPayment;
+    const payment =
+      (loanAmount * (apr * Math.pow(1 + apr, term))) /
+      (Math.pow(1 + apr, term) - 1);
+    return payment;
+  };
+
   return (
     <>
       <div className="container h-[500px] flex flex-col justify-end bg-white">
@@ -142,16 +165,60 @@ const Home = () => {
         <div className="w-full h-52 bg-gray-600 -mb-10"></div>
       </div>
 
-      <div className="container h-64 pt-20">
+      <div className="container h-64 pt-20 mb-20">
         <h3 className="text-indigo-900 text-xl mb-2">
           Mortgage <strong>Calculator</strong>
         </h3>
         <p className="text-gray-800 font-light font-sans text-sm mb-4 pr-8">
           Find out how much home you can afford.
         </p>
+        <label className="block text-indigo-900 font-light font-sans text-sm mb-2">
+          Mortgage Amount
+        </label>
         <input
           type="text"
-          className="w-full h-10 px-4 py-2 bg-gray-200 rounded-lg shadow-md focus:outline-none focus:bg-gray-300"
+          value={`$${mortgage.amount
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`}
+          onChange={(e) =>
+            setMortgage({
+              ...mortgage,
+              amount:
+                parseInt(
+                  e.target.value.replace(/,/g, "").replace(/\$/g, ""),
+                  10
+                ) || 0
+            })
+          }
+          className="w-full h-10 px-4 py-2 bg-gray-200 rounded-lg shadow-md focus:outline-none focus:bg-gray-300 mb-4"
+        />
+        <Slider
+          min={200000}
+          max={1000000}
+          step={5000}
+          value={mortgage.amount}
+          onChange={(value) =>
+            setMortgage({ ...mortgage, amount: parseInt(value, 10) })
+          }
+          trackStyle={{ backgroundColor: "#6366f1" }}
+          handleStyle={{
+            backgroundColor: "white",
+            border: "none",
+            boxShadow: "0 0 0 2px #312e81",
+            opacity: 1,
+            height: "12px",
+            width: "12px",
+            marginTop: "-4px"
+          }}
+        />
+        <label className="block text-indigo-900 font-light font-sans text-sm mt-8">
+          Monthly Payment
+        </label>
+        <input
+          type="text"
+          value={`$${Math.round(payment)
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`}
         />
       </div>
     </>
