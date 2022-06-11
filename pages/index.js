@@ -108,8 +108,8 @@ const Home = () => {
           Unmatched <strong>Transparency</strong>
         </h3>
         <p className="text-gray-200 font-light font-sans text-sm mb-4 pr-8">
-          Madison Builders' customer portal allows unparalleled transparency
-          into the homebuilding process.
+          Madison Builders&apos; customer portal allows unparalleled
+          transparency into the homebuilding process.
         </p>
         <Link href="/" passHref>
           <a className="mb-4 text-teal-300 flex items-center text-sm font-sans">
