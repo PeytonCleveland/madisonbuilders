@@ -332,9 +332,9 @@ const Home = () => {
         <h3 className="text-white text-xl mb-4">
           Explore Our <strong>Blog</strong>
         </h3>
-        <div class="snap-x mx-auto snap-mandatory flex w-full overflow-scroll">
+        <div className="snap-x mx-auto snap-mandatory flex w-full overflow-scroll">
           {blogPosts.map((post) => (
-            <div class="snap-start bg-indigo-200 w-3/4 flex-shrink-0 h-96 mr-6 flex items-center justify-center text-8xl">
+            <div className="snap-start bg-indigo-200 w-3/4 flex-shrink-0 h-96 mr-6 flex items-center justify-center text-8xl">
               {post.title}
             </div>
           ))}
