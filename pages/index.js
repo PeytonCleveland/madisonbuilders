@@ -4,6 +4,25 @@ import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 
 const Home = () => {
+  const blogPosts = [
+    {
+      title: "Blog Post 1",
+      date: "2020-01-01"
+    },
+    {
+      title: "Blog Post 2",
+      date: "2020-01-02"
+    },
+    {
+      title: "Blog Post 3",
+      date: "2020-01-03"
+    },
+    {
+      title: "Blog Post 4",
+      date: "2020-01-04"
+    }
+  ];
+
   const [mortgage, setMortgage] = useState({
     amount: 350_000,
     rate: 3.5,
@@ -15,10 +34,12 @@ const Home = () => {
     const apr = mortgage.rate / 1_200;
     const term = mortgage.term * 12;
     const loanAmount = mortgage.amount - mortgage.downPayment;
+    const tax = (loanAmount * 0.0033) / 12;
+    const insurance = (loanAmount * 0.0067) / 12;
     const payment =
       (loanAmount * (apr * Math.pow(1 + apr, term))) /
       (Math.pow(1 + apr, term) - 1);
-    return payment;
+    return payment + tax + insurance;
   };
 
   const [payment, setPayment] = useState(calculatePayment);
@@ -166,7 +187,7 @@ const Home = () => {
         <div className="w-full h-52 bg-gray-600 -mb-10"></div>
       </div>
 
-      <div className="container h-64 pt-20 mb-20">
+      <div className="container pt-20 pb-10">
         <h3 className="text-indigo-900 text-xl mb-2">
           Mortgage <strong>Calculator</strong>
         </h3>
@@ -212,15 +233,112 @@ const Home = () => {
             marginTop: "-4px"
           }}
         />
-        <label className="block text-indigo-900 font-light font-sans text-sm mt-8">
-          Monthly Payment
+        <div className="flex items-center mt-4 mb-5">
+          <div className="flex flex-col w-2/3 mr-6">
+            <label className="block text-indigo-900 font-light font-sans text-sm mb-2">
+              Loan Term
+            </label>
+            <select
+              className="w-full h-10 px-4 py-2 bg-gray-200 rounded-lg shadow-md focus:outline-none focus:bg-gray-300"
+              value={mortgage.term}
+              onChange={(e) =>
+                setMortgage({ ...mortgage, term: e.target.value })
+              }
+            >
+              <option value="30">30 Years</option>
+              <option value="15">15 Years</option>
+              <option value="10">10 Years</option>
+            </select>
+          </div>
+
+          <div className="flex flex-col w-1/3">
+            <label className="block text-indigo-900 font-light font-sans text-sm mb-2">
+              Interest Rate
+            </label>
+            <div className="flex items-center relative">
+              <input
+                type="text"
+                value={mortgage.rate}
+                onChange={(e) =>
+                  setMortgage({
+                    ...mortgage,
+                    rate: e.target.value
+                  })
+                }
+                className="w-full h-10 px-4 py-2 bg-gray-200 rounded-lg shadow-md focus:outline-none focus:bg-gray-300 group"
+              />
+              <h4 className="text-lg text-gray-500 font-sans rounded-r-lg h-10 flex items-center absolute right-3">
+                %
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <label className="block text-indigo-900 font-light font-sans text-sm mb-2">
+          Down Payment
         </label>
         <input
           type="text"
-          value={`$${Math.round(payment)
+          value={`$${mortgage.downPayment
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`}
+          onChange={(e) =>
+            setMortgage({
+              ...mortgage,
+              downPayment:
+                parseInt(
+                  e.target.value.replace(/,/g, "").replace(/\$/g, ""),
+                  10
+                ) || 0
+            })
+          }
+          className="w-full h-10 px-4 py-2 bg-gray-200 rounded-lg shadow-md focus:outline-none focus:bg-gray-300 mb-4"
         />
+        <Slider
+          min={0}
+          max={mortgage.amount}
+          step={5000}
+          value={mortgage.downPayment}
+          onChange={(value) =>
+            setMortgage({ ...mortgage, downPayment: parseInt(value, 10) })
+          }
+          trackStyle={{ backgroundColor: "#6366f1" }}
+          handleStyle={{
+            backgroundColor: "white",
+            border: "none",
+            boxShadow: "0 0 0 2px #312e81",
+            opacity: 1,
+            height: "12px",
+            width: "12px",
+            marginTop: "-4px"
+          }}
+        />
+
+        <div className="bg-indigo-100 p-5 pt-[19px] rounded-md mt-6 shadow-md flex flex-col items-center">
+          <label className="block text-indigo-900 text-sm mb-1">
+            Monthly Payment
+          </label>
+          <h5 className="text-4xl">
+            $
+            {payment
+              .toFixed(2)
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          </h5>
+        </div>
+      </div>
+
+      <div className="bg-indigo-900 w-full container py-8">
+        <h3 className="text-white text-xl mb-4">
+          Explore Our <strong>Blog</strong>
+        </h3>
+        <div class="snap-x mx-auto snap-mandatory flex w-full overflow-scroll">
+          {blogPosts.map((post) => (
+            <div class="snap-start bg-indigo-200 w-3/4 flex-shrink-0 h-96 mr-6 flex items-center justify-center text-8xl">
+              {post.title}
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
