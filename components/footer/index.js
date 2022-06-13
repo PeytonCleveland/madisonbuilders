@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 container -mt-1 flex flex-col py-6 justify-between">
+    <footer className="bg-gradient-to-br from-gray-800 to-gray-900 container -mt-1 flex flex-col py-8 justify-between">
       <div className="flex w-full">
         <div className="flex flex-1 flex-col">
           <div>
@@ -14,10 +14,18 @@ const Footer = () => {
               alt="Madison Builders"
             />
           </div>
-          <p className="text-white text-sm font-sans mt-3 mb-1.5 font-semibold">
+          <Link href="mailto:peyton@madisonbuilders.llc" passHref>
+            <a className="text-xs text-white mt-2 mb-0.5">
+              peyton@madisonbuilders.llc
+            </a>
+          </Link>
+          <Link href="mailto:peyton@madisonbuilders.llc" passHref>
+            <a className="text-xs text-white">334.782.9357</a>
+          </Link>
+          <p className="text-white text-sm font-sans mt-3 mb-2 font-semibold">
             Follow us!
           </p>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <Link href="https://facebook.com/madisonbuilders" passHref>
               <a>
                 <Image
@@ -31,7 +39,7 @@ const Footer = () => {
             <Link href="https://facebook.com/madisonbuilders" passHref>
               <a>
                 <Image
-                  src="/facebook.png"
+                  src="/instagram.png"
                   width={24}
                   height={24}
                   alt="facebook"
@@ -41,15 +49,15 @@ const Footer = () => {
             <Link href="https://facebook.com/madisonbuilders" passHref>
               <a>
                 <Image
-                  src="/facebook.png"
+                  src="/linkedin.png"
                   width={24}
                   height={24}
-                  alt="facebook"
+                  alt="linkedin"
                 />
               </a>
             </Link>
           </div>
-          <p className="text-white text-sm font-sans mt-2 font-light">
+          <p className="text-white text-sm font-sans mt-3 font-light">
             License #26995
           </p>
           <Link
@@ -73,10 +81,33 @@ const Footer = () => {
             </a>
           </Link>
         </div>
-        <div className="flex flex-1">2</div>
+        <div className="flex flex-1 flex-col pl-12">
+          <h4 className="text-teal-300">Quick Links</h4>
+          <Link href="/" passHref>
+            <a className="text-white text-sm font-sans my-1">Home</a>
+          </Link>
+          <Link href="/about" passHref>
+            <a className="text-white text-sm font-sans my-1">About</a>
+          </Link>
+          <Link href="/process" passHref>
+            <a className="text-white text-sm font-sans my-1">Process</a>
+          </Link>
+          <Link href="/work" passHref>
+            <a className="text-white text-sm font-sans my-1">Work</a>
+          </Link>
+          <Link href="/blog" passHref>
+            <a className="text-white text-sm font-sans my-1">Blog</a>
+          </Link>
+          <Link href="/contact" passHref>
+            <a className="text-white text-sm font-sans my-1">Contact</a>
+          </Link>
+          <Link href="/client-portal" passHref>
+            <a className="text-white text-sm font-sans my-1">Client Portal</a>
+          </Link>
+        </div>
       </div>
       <div>
-        <div className="mt-10 mb-5 flex justify-center gap-6">
+        <div className="mt-12 mb-5 flex justify-center gap-6">
           <Image
             src="/2-10.png"
             width={47}
@@ -85,8 +116,8 @@ const Footer = () => {
           />
           <Image
             src="/eho.png"
-            width={53}
-            height={53}
+            width={54}
+            height={54}
             alt="Equal Housing Opportunity"
             className="ml-1"
           />

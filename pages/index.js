@@ -20,6 +20,14 @@ const Home = () => {
     {
       title: "Blog Post 4",
       date: "2020-01-04"
+    },
+    {
+      title: "Blog Post 5",
+      date: "2020-01-05"
+    },
+    {
+      title: "Blog Post 6",
+      date: "2020-01-06"
     }
   ];
 
@@ -328,7 +336,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-indigo-900 w-full container py-8">
+      <div className="bg-gradient-to-br from-indigo-800 to-indigo-900 w-full container py-8">
         <h3 className="text-white text-xl mb-4">
           Explore Our <strong>Blog</strong>
         </h3>
