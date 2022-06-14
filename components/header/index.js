@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeaderLink from "../header-link";
 import { useRouter } from "next/router";
+import { useSession, signOut } from "next-auth/react";
 
 import { useState, useEffect } from "react";
 
@@ -16,12 +17,21 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const path = router.pathname;
+  const { data: session, status } = useSession();
   useEffect(() => {
     setIsOpen(false);
   }, [path]);
+
+  const handleSignOut = (event) => {
+    event.preventDefault();
+    signOut();
+    setIsOpen(false);
+  };
+
   const navStyle = isOpen
     ? "opacity-100 flex flex-col w-screen h-screen bg-indigo-100 absolute top-0 left-0 z-50 transition-all duration-500 ease-in-out p-4 pt-[21px]"
     : "opacity-0 flex flex-col w-screen h-screen bg-indigo-100 absolute -top-[900px] left-0 -z-10 transition-all duration-500 ease-in-out p-4 pt-[21px]";
+
   return (
     <header className="container flex w-full h-20 justify-between items-center fixed bg-white z-50">
       <div className="flex">
@@ -94,12 +104,23 @@ const Header = () => {
           {links.map((link) => (
             <HeaderLink key={link.text} {...link} mobile />
           ))}
-          <button className="w-full border-2 border-indigo-900 text-indigo-900 text-2xl font-regular rounded-md py-2 mb-4">
-            Client portal
-          </button>
-          <button className="w-full bg-indigo-900 text-white text-2xl font-regular rounded-md py-[9px]">
-            Let&apos;s talk
-          </button>
+          {status === "unauthenticated" ? (
+            <>
+              <button className="w-full border-2 border-indigo-900 text-indigo-900 text-2xl font-regular rounded-md py-2 mb-4">
+                Client portal
+              </button>
+              <button className="w-full bg-indigo-900 text-white text-2xl font-regular rounded-md py-[9px]">
+                Let&apos;s talk
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={(event) => handleSignOut(event)}
+              className="w-full bg-indigo-900 text-white text-2xl font-regular rounded-md py-[9px]"
+            >
+              Sign out
+            </button>
+          )}
         </div>
       </div>
     </header>

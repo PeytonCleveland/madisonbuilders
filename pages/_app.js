@@ -1,8 +1,10 @@
 import "../styles/globals.css";
 import { Layout } from "../components";
 import Head from "next/head";
+import Auth from "../auth/auth";
+import { SessionProvider } from "next-auth/react";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
       <Head>
@@ -39,9 +41,13 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <SessionProvider session={session}>
+        <Auth>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Auth>
+      </SessionProvider>
     </>
   );
 }
