@@ -33,7 +33,24 @@ export default function ClientLogin() {
   };
 
   return (
-    <div className="flex bg-indigo-50 pt-48 pb-32 container">
+    <div className="flex items-center bg-gradient-to-br from-gray-200 to-gray-300 h-screen container relative">
+      <Link href="/" passHref>
+        <a className="absolute top-4 left-4 text-gray-900 font-semibold flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+          Home page
+        </a>
+      </Link>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="p-8 bg-white w-full rounded-3xl shadow-md flex flex-col gap-6"
@@ -60,19 +77,19 @@ export default function ClientLogin() {
           <input
             {...register("email", { required: true })}
             placeholder="Email address"
-            className="px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500"
+            className="px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
           />
         )}
 
         <button
-          className="bg-indigo-500 w-full py-3 rounded-full text-white hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+          className="bg-gradient-to-br from-indigo-600 to-indigo-700 w-full py-3 shadow-md rounded-full text-white hover:bg-indigo-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed"
           type="submit"
           disabled={loading}
         >
           Log in / Sign up
         </button>
         <Link href="/support" passHref>
-          <a className="text-indigo-500 text-center text-sm">
+          <a className="text-indigo-600 text-center text-sm">
             Having issues? Click here
           </a>
         </Link>
