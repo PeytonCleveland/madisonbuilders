@@ -1,10 +1,11 @@
 import { useSession } from "next-auth/react";
 import getGreeting from "../../utils/get-greeting";
+import Link from "next/link";
 
 const ClientPortal = () => {
   const { data: session } = useSession();
   return (
-    <div className="container pt-24 pb-32 flex flex-col gap-6 bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="container pt-24 pb-20 flex flex-col gap-6 bg-gradient-to-br from-gray-100 to-gray-200">
       <div className="flex flex-col gap-5 bg-gradient-to-br from-indigo-700 to-indigo-800 p-4 pb-5 rounded-lg shadow-md">
         <h1 className="text-white font-semibold text-lg">{`${getGreeting()}, ${
           session?.userData.firstName
@@ -25,7 +26,7 @@ const ClientPortal = () => {
         </div>
         <div className="flex flex-col gap-1.5">
           <p className="text-white font-light text-sm">Next step:</p>
-          <button className="bg-white text-indigo-800 rounded-full shadow-md py-2 flex items-center justify-center gap-1 font-semibold">
+          <button className="bg-white text-indigo-800 rounded-full shadow-md py-2 flex items-center justify-center gap-1.5 font-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -40,12 +41,6 @@ const ClientPortal = () => {
             </svg>
             Contract signature
           </button>
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-3">
-        <div className="flex justify-between items-center">
-          <p className="text-gray-900 font-medium">Quick actions</p>
         </div>
       </div>
 
@@ -90,8 +85,31 @@ const ClientPortal = () => {
       </div>
 
       <div className="flex flex-col gap-3">
-        <div className="flex justify-between items-center">
-          <p className="text-gray-900 font-medium">Support</p>
+        <p className="text-gray-900 font-medium">Support</p>
+        <div className="flex flex-col gap-4 bg-gradient-to-br from-gray-800 to-gray-900 p-4 pb-5 rounded-lg shadow-md">
+          <p className="text-white font-light text-sm font-sans">
+            Need some help? Click below for support or browse our{" "}
+            <Link href="/support">
+              <a className="text-teal-300">frequently asked questions.</a>
+            </Link>
+          </p>
+          <button className="bg-white text-gray-900 rounded-full shadow-md py-2 flex items-center justify-center gap-1.5 font-semibold">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            Customer support
+          </button>
         </div>
       </div>
     </div>
