@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
       <Head>
         <title>Madison Builders</title>
         <meta type="og:title" content="Madison Builders" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           type="og:description"
           content="Madison Builders is Alabama's premier custom home builder, focused on utilizing the latest in building science to construct high-performing, energy-efficient homes."
