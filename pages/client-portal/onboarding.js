@@ -41,36 +41,28 @@ const Onboarding = () => {
   };
 
   const onSubmit = async ({ firstName, lastName, email, phoneNumber }) => {
-    // if data from form is different from session data, update firebase
-    if (
-      session.userData.firstName !== firstName ||
-      session.userData.lastName !== lastName ||
-      session.userData.email !== email ||
-      session.userData.phoneNumber !== phoneNumber
-    ) {
-      setLoading(true);
-      const usersRef = collection(db, "users");
-      const q = query(usersRef, where("email", "==", session.userData.email));
-      const querySnapshot = await getDocs(q);
-      const id = querySnapshot.docs[0].id;
-      const userRef = doc(db, "users", id);
-      try {
-        await updateDoc(userRef, {
-          onboarded: true,
-          firstName: firstName,
-          lastName: lastName,
-          email: email.toLowerCase(),
-          phoneNumber: phoneNumber
-        });
-      } catch (e) {
-        console.log(e);
-      }
-      setLoading(false);
-      session.userData.firstName = firstName;
-      session.userData.lastName = lastName;
-      session.userData.email = email.toLowerCase();
-      session.userData.phoneNumber = phoneNumber;
+    setLoading(true);
+    const usersRef = collection(db, "users");
+    const q = query(usersRef, where("email", "==", session.userData.email));
+    const querySnapshot = await getDocs(q);
+    const id = querySnapshot.docs[0].id;
+    const userRef = doc(db, "users", id);
+    try {
+      await updateDoc(userRef, {
+        onboarded: true,
+        firstName: firstName,
+        lastName: lastName,
+        email: email.toLowerCase(),
+        phoneNumber: phoneNumber
+      });
+    } catch (e) {
+      console.log(e);
     }
+    setLoading(false);
+    session.userData.firstName = firstName;
+    session.userData.lastName = lastName;
+    session.userData.email = email.toLowerCase();
+    session.userData.phoneNumber = phoneNumber;
     session.userData.onboarded = true;
     router.push("/client-portal");
   };
