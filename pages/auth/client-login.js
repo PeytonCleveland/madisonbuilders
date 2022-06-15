@@ -41,7 +41,7 @@ export default function ClientLogin() {
         <meta name="description" content="Client Login" />
         <meta name="keywords" content="client, login" />
       </Head>
-      <div className="flex items-center bg-gray-200 h-screen container relative scroll-smooth">
+      <div className="flex items-center bg-gray-200 h-screen container relative">
         <Link href="/" passHref>
           <a className="absolute top-4 left-4 text-gray-900 font-semibold flex items-center gap-2">
             <svg
@@ -88,7 +88,7 @@ export default function ClientLogin() {
               type="email"
               className="px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
               onBlur={() => {
-                window.scrollTo(0, 0);
+                window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             />
           )}
