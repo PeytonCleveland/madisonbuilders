@@ -21,6 +21,7 @@ const Onboarding = () => {
     formState: { errors }
   } = useForm();
   const router = useRouter();
+  let timeoutId = null;
 
   useEffect(() => {
     if (session) {
@@ -30,6 +31,12 @@ const Onboarding = () => {
       setValue("phoneNumber", session.userData.phoneNumber || "");
     }
   }, [session]);
+
+  const cancelTimeout = () => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+  };
 
   const onSubmit = async ({ firstName, lastName, email, phoneNumber }) => {
     // if data from form is different from session data, update firebase
@@ -92,10 +99,12 @@ const Onboarding = () => {
           <input
             {...register("firstName", { required: "First name is required" })}
             placeholder="First name"
-            onBlur={async () => {
-              await new Promise((resolve) => setTimeout(resolve, 100));
-              window.scrollTo({ top: 0, behavior: "smooth" });
+            onBlur={() => {
+              timeoutId = setTimeout(function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }, 150);
             }}
+            onFocus={cancelTimeout}
             className={
               errors.firstName
                 ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
@@ -115,10 +124,12 @@ const Onboarding = () => {
           <input
             {...register("lastName", { required: "Last name is required" })}
             placeholder="Last name"
-            onBlur={async () => {
-              await new Promise((resolve) => setTimeout(resolve, 100));
-              window.scrollTo({ top: 0, behavior: "smooth" });
+            onBlur={() => {
+              timeoutId = setTimeout(function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }, 150);
             }}
+            onFocus={cancelTimeout}
             className={
               errors.lastName
                 ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
@@ -138,10 +149,12 @@ const Onboarding = () => {
           <input
             {...register("email", { required: "Email is required" })}
             placeholder="Email"
-            onBlur={async () => {
-              await new Promise((resolve) => setTimeout(resolve, 100));
-              window.scrollTo({ top: 0, behavior: "smooth" });
+            onBlur={() => {
+              timeoutId = setTimeout(function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }, 150);
             }}
+            onFocus={cancelTimeout}
             className={
               errors.email
                 ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
@@ -164,10 +177,12 @@ const Onboarding = () => {
             })}
             type="tel"
             placeholder="Phone number"
-            onBlur={async () => {
-              await new Promise((resolve) => setTimeout(resolve, 100));
-              window.scrollTo({ top: 0, behavior: "smooth" });
+            onBlur={() => {
+              timeoutId = setTimeout(function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }, 150);
             }}
+            onFocus={cancelTimeout}
             className={
               errors.phoneNumber
                 ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
