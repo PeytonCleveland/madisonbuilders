@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeaderLink from "../header-link";
 import { useRouter } from "next/router";
 import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
 
 import { useState, useEffect } from "react";
 
@@ -24,14 +25,14 @@ const Header = () => {
 
   const handleSignOut = (event) => {
     event.preventDefault();
-    signOut();
+    signOut({ redirect: false });
     session = null;
     setIsOpen(false);
   };
 
   const navStyle = isOpen
-    ? "opacity-100 flex flex-col w-screen h-screen bg-indigo-100 absolute top-0 left-0 z-50 transition-all duration-500 ease-in-out p-4 pt-[21px]"
-    : "opacity-0 flex flex-col w-screen h-screen bg-indigo-100 absolute -top-[900px] left-0 -z-10 transition-all duration-500 ease-in-out p-4 pt-[21px]";
+    ? "opacity-100 flex flex-col w-screen h-screen bg-indigo-50 absolute top-0 left-0 z-50 transition-all duration-500 ease-in-out p-4 pt-[21px]"
+    : "opacity-0 flex flex-col w-screen h-screen bg-indigo-50 absolute -top-[900px] left-0 -z-10 transition-all duration-500 ease-in-out p-4 pt-[21px]";
 
   return (
     <header className="container flex w-full h-20 justify-between items-center fixed bg-white z-50">
@@ -107,17 +108,19 @@ const Header = () => {
           ))}
           {status === "unauthenticated" ? (
             <>
-              <button className="w-full border-2 border-indigo-900 text-indigo-900 text-2xl font-regular rounded-md py-2 mb-4">
-                Client portal
-              </button>
-              <button className="w-full bg-indigo-900 text-white text-2xl font-regular rounded-md py-[9px]">
+              <Link href="/client-portal" passHref>
+                <a className="w-full border-2 border-indigo-800 text-indigo-800 text-2xl font-regular shadow-md rounded-full py-2 mb-4 flex justify-center items-center">
+                  Client portal
+                </a>
+              </Link>
+              <button className="w-full  bg-gradient-to-br from-indigo-700 to-indigo-800 shadow-md text-white text-2xl font-regular rounded-full py-[9px]">
                 Let&apos;s talk
               </button>
             </>
           ) : (
             <button
               onClick={(event) => handleSignOut(event)}
-              className="w-full bg-indigo-900 text-white text-2xl font-regular rounded-md py-[9px]"
+              className="w-full bg-gradient-to-br from-indigo-700 to-indigo-800 text-white text-2xl font-regular rounded-full py-[9px]"
             >
               Sign out
             </button>

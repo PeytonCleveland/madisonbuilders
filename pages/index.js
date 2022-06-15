@@ -81,10 +81,10 @@ const Home = () => {
           Lorem ipsum dolor sit amet consectetor adpiscing elit sed do eiusmod
         </h2>
         <div className="flex mt-6 mb-32">
-          <button className="flex flex-1 mr-2 justify-center items-center border-2 border-indigo-800 text-indigo-800 px-5 py-[5px] font-semibold text-lg rounded hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
+          <button className="flex flex-1 mr-2 justify-center items-center border-2 border-indigo-700 text-indigo-700 px-5 py-[5px] font-semibold text-lg rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
             Our Process
           </button>
-          <button className="flex flex-1 ml-2 justify-center items-center bg-gradient-to-br from-indigo-800 to-indigo-900 text-white px-5 py-[5px] font-semibold text-lg rounded hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
+          <button className="flex flex-1 ml-2 justify-center items-center bg-gradient-to-br from-indigo-700 to-indigo-800 text-white px-5 py-[5px] font-semibold text-lg rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
             Let&apos;s Talk{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@ const Home = () => {
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           veniam quis nostrud exercitation ullamco laboris.
         </p>
-        <button className="w-fit bg-white text-indigo-900 px-5 py-[5px] font-semibold text-lg rounded mb-10 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
+        <button className="w-fit bg-white text-indigo-900 px-5 py-[5px] font-semibold text-lg rounded-full mb-10 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
           Learn more
         </button>
       </div>
