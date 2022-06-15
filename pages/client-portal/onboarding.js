@@ -54,7 +54,7 @@ const Onboarding = () => {
         <div className="flex flex-col w-full gap-1 justify-center items-center">
           <p className="text-4xl">👋🏼</p>
           <h1 className="text-2xl font-semibold">
-            Welcome {session.userData.firstName}!
+            Welcome {session?.userData.firstName}!
           </h1>
           <p className="text-gray-600 font-sans font-light text-center text-sm">
             We&apos;re glad you&apos;re here. Let&apos;s get started.

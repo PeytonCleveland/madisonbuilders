@@ -87,14 +87,15 @@ export default function ClientLogin() {
               placeholder="Email address"
               type="email"
               className="px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
-              onBlur={() => {
+              onBlur={async () => {
+                await new Promise((resolve) => setTimeout(resolve, 100));
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             />
           )}
 
           <button
-            className="bg-gradient-to-br from-indigo-600 to-indigo-700 w-full py-3 shadow-md rounded-full text-white hover:bg-indigo-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed"
+            className="bg-gradient-to-br from-indigo-600 to-indigo-700 w-full py-3 shadow-md rounded-full text-white hover:bg-indigo-700 disabled:from-gray-400 disabled:to-gray-400 disabled:cursor-not-allowed"
             type="submit"
             disabled={loading}
           >
