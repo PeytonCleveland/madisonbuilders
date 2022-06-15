@@ -16,30 +16,24 @@ export default NextAuth({
     signIn: "/auth/client-login"
   },
   callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        // Call firebase to grab user information by their email
-        const q = query(usersRef, where("email", "==", user.email));
+    async session({ session }) {
+      if (session.user) {
+        const q = query(usersRef, where("email", "==", session.user.email));
         const querySnapshot = await getDocs(q);
         const userData = querySnapshot.docs[0]?.data();
-        token.userData = userData;
+        session.userData = userData;
         if (!userData) {
           // Create a new user in firebase
           await addDoc(collection(db, "users"), {
-            email: user.email,
+            email: session.user.email,
             onboarded: false
           });
-          token.userData = {
-            email: user.email,
+          session.userData = {
+            email: session.user.email,
             onboarded: false
           };
         }
       }
-
-      return token;
-    },
-    async session({ session, token }) {
-      session.userData = token.userData;
       return session;
     }
   },
