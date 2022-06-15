@@ -88,7 +88,7 @@ export default function ClientLogin() {
               type="email"
               className="px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
               onBlur={async () => {
-                await new Promise((resolve) => setTimeout(resolve, 100));
+                await new Promise((resolve) => setTimeout(resolve, 250));
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             />

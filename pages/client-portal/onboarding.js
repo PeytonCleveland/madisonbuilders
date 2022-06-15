@@ -14,35 +14,50 @@ import { useEffect } from "react";
 
 const Onboarding = () => {
   const { data: session } = useSession();
-  const { register, handleSubmit, setValue } = useForm();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors }
+  } = useForm();
   const router = useRouter();
 
   useEffect(() => {
     if (session) {
       setValue("firstName", session.userData.firstName || "");
       setValue("lastName", session.userData.lastName || "");
-      setValue("phoneNumber", session.userData.phone || "");
+      setValue("phoneNumber", session.userData.phoneNumber || "");
     }
   }, [session]);
 
   const onSubmit = async ({ firstName, lastName, phoneNumber }) => {
-    const usersRef = collection(db, "users");
-    const q = query(usersRef, where("email", "==", session.userData.email));
-    const querySnapshot = await getDocs(q);
-    const id = querySnapshot.docs[0].id;
-    const userRef = doc(db, "users", id);
-    try {
-      await updateDoc(userRef, {
-        onboarded: true,
-        firstName: firstName,
-        lastName: lastName,
-        phoneNumber: phoneNumber
-      });
-      session.userData.onboarded = true;
-      router.push("/client-portal");
-    } catch (e) {
-      console.log(e);
+    // if data from form is different from session data, update firebase
+    if (
+      session.userData.firstName !== firstName ||
+      session.userData.lastName !== lastName ||
+      session.userData.phoneNumber !== phoneNumber
+    ) {
+      const usersRef = collection(db, "users");
+      const q = query(usersRef, where("email", "==", session.userData.email));
+      const querySnapshot = await getDocs(q);
+      const id = querySnapshot.docs[0].id;
+      const userRef = doc(db, "users", id);
+      try {
+        await updateDoc(userRef, {
+          onboarded: true,
+          firstName: firstName,
+          lastName: lastName,
+          phoneNumber: phoneNumber
+        });
+      } catch (e) {
+        console.log(e);
+      }
+      session.userData.firstName = firstName;
+      session.userData.lastName = lastName;
+      session.userData.phoneNumber = phoneNumber;
     }
+    session.userData.onboarded = true;
+    router.push("/client-portal");
   };
 
   return (
@@ -51,7 +66,7 @@ const Onboarding = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex-1 flex flex-col items-center justify-center bg-white w-full rounded-xl shadow-md p-6 gap-4"
       >
-        <div className="flex flex-col w-full gap-1 justify-center items-center">
+        <div className="flex flex-col w-full gap-1 justify-center items-center mb-1">
           <p className="text-4xl">👋🏼</p>
           <h1 className="text-2xl font-semibold">
             Welcome {session?.userData.firstName}!
@@ -61,24 +76,68 @@ const Onboarding = () => {
             <br /> Please confirm your information:
           </p>
         </div>
-        <input
-          {...register("firstName", { required: true })}
-          placeholder="First name"
-          className="px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
-        />
-        <input
-          {...register("lastName", { required: true })}
-          placeholder="Last name"
-          className="px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
-        />
-        <input
-          {...register("phoneNumber", { required: true })}
-          type="tel"
-          placeholder="Phone number"
-          className="px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
-        />
+        <div className="flex flex-col w-full gap-1">
+          <div className="flex justify-between">
+            <label className="block text-gray-600 font-sans font-light text-sm">
+              First Name
+            </label>
+            <p className="text-red-600 font-sans text-xs text-right">
+              {errors.firstName?.message}
+            </p>
+          </div>
+          <input
+            {...register("firstName", { required: "First name is required" })}
+            placeholder="First name"
+            className={
+              errors.firstName
+                ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
+                : "px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
+            }
+          />
+        </div>
+        <div className="flex flex-col w-full gap-1">
+          <div className="flex justify-between">
+            <label className="block text-gray-600 font-sans font-light text-sm">
+              Last Name
+            </label>
+            <p className="text-red-600 font-sans text-xs text-right">
+              {errors.lastName?.message}
+            </p>
+          </div>
+          <input
+            {...register("lastName", { required: "Last name is required" })}
+            placeholder="Last name"
+            className={
+              errors.lastName
+                ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
+                : "px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
+            }
+          />
+        </div>
+        <div className="flex flex-col w-full gap-1">
+          <div className="flex justify-between">
+            <label className="block text-gray-600 font-sans font-light text-sm">
+              Phone number
+            </label>
+            <p className="text-red-600 font-sans text-xs text-right">
+              {errors.phoneNumber?.message}
+            </p>
+          </div>
+          <input
+            {...register("phoneNumber", {
+              required: "Phone number is required"
+            })}
+            type="tel"
+            placeholder="Phone number"
+            className={
+              errors.phoneNumber
+                ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
+                : "px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
+            }
+          />
+        </div>
         <button
-          className="bg-gradient-to-br from-indigo-600 to-indigo-700 w-full py-3 rounded-full text-white font-semibold flex items-center justify-center shadow-md gap-2"
+          className="mt-1 bg-gradient-to-br from-indigo-600 to-indigo-700 w-full py-3 rounded-full text-white font-semibold flex items-center justify-center shadow-md gap-2"
           type="Submit"
         >
           <svg

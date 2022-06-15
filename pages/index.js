@@ -106,7 +106,7 @@ const Home = () => {
         <video
           className="-mt-12 rounded-lg mb-8"
           controls
-          playsinline
+          playsInline
           src="/stock.mov#t=0.001"
         ></video>
         <h3 className="text-white text-xl mb-2">
