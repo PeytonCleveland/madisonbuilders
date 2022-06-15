@@ -57,7 +57,7 @@ const Onboarding = () => {
             Welcome {session.userData.firstName}!
           </h1>
           <p className="text-gray-600 font-sans font-light text-center text-sm">
-            We're glad you're here. Let's get started.
+            We&apos;re glad you&apos;re here. Let&apos;s get started.
             <br /> Please confirm your information:
           </p>
         </div>
