@@ -3,8 +3,11 @@ import { Layout } from "../components";
 import Head from "next/head";
 import Auth from "../auth/auth";
 import { SessionProvider } from "next-auth/react";
+import smoothscroll from "smoothscroll-polyfill";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  typeof window !== "undefined" && smoothscroll.polyfill();
+
   return (
     <>
       <Head>

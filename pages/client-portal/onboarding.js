@@ -93,7 +93,7 @@ const Onboarding = () => {
             {...register("firstName", { required: "First name is required" })}
             placeholder="First name"
             onBlur={async () => {
-              await new Promise((resolve) => setTimeout(resolve, 250));
+              await new Promise((resolve) => setTimeout(resolve, 100));
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className={
@@ -116,7 +116,7 @@ const Onboarding = () => {
             {...register("lastName", { required: "Last name is required" })}
             placeholder="Last name"
             onBlur={async () => {
-              await new Promise((resolve) => setTimeout(resolve, 250));
+              await new Promise((resolve) => setTimeout(resolve, 100));
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className={
@@ -139,7 +139,7 @@ const Onboarding = () => {
             {...register("email", { required: "Email is required" })}
             placeholder="Email"
             onBlur={async () => {
-              await new Promise((resolve) => setTimeout(resolve, 250));
+              await new Promise((resolve) => setTimeout(resolve, 100));
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className={
@@ -165,7 +165,7 @@ const Onboarding = () => {
             type="tel"
             placeholder="Phone number"
             onBlur={async () => {
-              await new Promise((resolve) => setTimeout(resolve, 250));
+              await new Promise((resolve) => setTimeout(resolve, 100));
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className={
