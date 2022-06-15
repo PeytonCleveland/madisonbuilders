@@ -33,7 +33,7 @@ export default function ClientLogin() {
   };
 
   return (
-    <div className="flex items-center bg-gradient-to-br from-gray-200 to-gray-300 h-screen container relative">
+    <div className="flex items-center bg-gradient-to-br from-gray-200 to-gray-300 h-screen container relative scroll-smooth">
       <Link href="/" passHref>
         <a className="absolute top-4 left-4 text-gray-900 font-semibold flex items-center gap-2">
           <svg
