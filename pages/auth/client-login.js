@@ -77,7 +77,11 @@ export default function ClientLogin() {
           <input
             {...register("email", { required: true })}
             placeholder="Email address"
+            type="email"
             className="px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
+            onBlur={() => {
+              window.scrollTo(0, 0);
+            }}
           />
         )}
 
