@@ -25,6 +25,7 @@ const Header = () => {
   const handleSignOut = (event) => {
     event.preventDefault();
     signOut();
+    session = null;
     setIsOpen(false);
   };
 

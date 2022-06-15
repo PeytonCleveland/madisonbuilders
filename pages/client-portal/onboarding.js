@@ -10,7 +10,8 @@ import {
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Spinner } from "../../components";
 
 const Onboarding = () => {
   const { data: session } = useSession();
@@ -21,6 +22,7 @@ const Onboarding = () => {
     formState: { errors }
   } = useForm();
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   let timeoutId = null;
 
   useEffect(() => {
@@ -46,6 +48,7 @@ const Onboarding = () => {
       session.userData.email !== email ||
       session.userData.phoneNumber !== phoneNumber
     ) {
+      setLoading(true);
       const usersRef = collection(db, "users");
       const q = query(usersRef, where("email", "==", session.userData.email));
       const querySnapshot = await getDocs(q);
@@ -56,15 +59,16 @@ const Onboarding = () => {
           onboarded: true,
           firstName: firstName,
           lastName: lastName,
-          email: email,
+          email: email.toLowerCase(),
           phoneNumber: phoneNumber
         });
       } catch (e) {
         console.log(e);
       }
+      setLoading(false);
       session.userData.firstName = firstName;
       session.userData.lastName = lastName;
-      session.userData.email = email;
+      session.userData.email = email.toLowerCase();
       session.userData.phoneNumber = phoneNumber;
     }
     session.userData.onboarded = true;
@@ -194,18 +198,22 @@ const Onboarding = () => {
           className="mt-1 bg-gradient-to-br from-indigo-600 to-indigo-700 w-full py-3 rounded-full text-white font-semibold flex items-center justify-center shadow-md gap-2"
           type="Submit"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clipRule="evenodd"
-            />
-          </svg>
+          {loading ? (
+            <Spinner size="sm" />
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+          )}
           Confirm info
         </button>
       </form>
