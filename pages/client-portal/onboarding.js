@@ -26,15 +26,17 @@ const Onboarding = () => {
     if (session) {
       setValue("firstName", session.userData.firstName || "");
       setValue("lastName", session.userData.lastName || "");
+      setValue("email", session.userData.email || "");
       setValue("phoneNumber", session.userData.phoneNumber || "");
     }
   }, [session]);
 
-  const onSubmit = async ({ firstName, lastName, phoneNumber }) => {
+  const onSubmit = async ({ firstName, lastName, email, phoneNumber }) => {
     // if data from form is different from session data, update firebase
     if (
       session.userData.firstName !== firstName ||
       session.userData.lastName !== lastName ||
+      session.userData.email !== email ||
       session.userData.phoneNumber !== phoneNumber
     ) {
       const usersRef = collection(db, "users");
@@ -47,6 +49,7 @@ const Onboarding = () => {
           onboarded: true,
           firstName: firstName,
           lastName: lastName,
+          email: email,
           phoneNumber: phoneNumber
         });
       } catch (e) {
@@ -54,6 +57,7 @@ const Onboarding = () => {
       }
       session.userData.firstName = firstName;
       session.userData.lastName = lastName;
+      session.userData.email = email;
       session.userData.phoneNumber = phoneNumber;
     }
     session.userData.onboarded = true;
@@ -88,6 +92,10 @@ const Onboarding = () => {
           <input
             {...register("firstName", { required: "First name is required" })}
             placeholder="First name"
+            onBlur={async () => {
+              await new Promise((resolve) => setTimeout(resolve, 250));
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className={
               errors.firstName
                 ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
@@ -107,8 +115,35 @@ const Onboarding = () => {
           <input
             {...register("lastName", { required: "Last name is required" })}
             placeholder="Last name"
+            onBlur={async () => {
+              await new Promise((resolve) => setTimeout(resolve, 250));
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className={
               errors.lastName
+                ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
+                : "px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
+            }
+          />
+        </div>
+        <div className="flex flex-col w-full gap-1">
+          <div className="flex justify-between">
+            <label className="block text-gray-600 font-sans font-light text-sm">
+              Email
+            </label>
+            <p className="text-red-600 font-sans text-xs text-right">
+              {errors.email?.message}
+            </p>
+          </div>
+          <input
+            {...register("email", { required: "Email is required" })}
+            placeholder="Email"
+            onBlur={async () => {
+              await new Promise((resolve) => setTimeout(resolve, 250));
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className={
+              errors.email
                 ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
                 : "px-4 py-3 w-full rounded-lg bg-white border border-gray-300 focus:outline-indigo-500 focus:border-indigo-500 shadow"
             }
@@ -129,6 +164,10 @@ const Onboarding = () => {
             })}
             type="tel"
             placeholder="Phone number"
+            onBlur={async () => {
+              await new Promise((resolve) => setTimeout(resolve, 250));
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className={
               errors.phoneNumber
                 ? "px-4 py-3 w-full rounded-lg bg-white border border-red-600 focus:outline-red-600 focus:border-red-600 shadow"
