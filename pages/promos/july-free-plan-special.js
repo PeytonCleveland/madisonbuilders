@@ -6,18 +6,38 @@ const JulyPromo = ({ plans }) => {
   return (
     <>
       <Head>
-        <meta type="og:title" content="Madison Builders - Promos" />
+        <title>Madison Builders - Free Plan July</title>
+        <meta name="title" content="Madison Builders - Free Plan July" />
         <meta
-          type="og:description"
+          name="description"
           content="For the entire month of July when you start a custom home build with Madison Builders we'll give you the plan of your dreams 100% free.  Choose from over 50k+ house plans and let us make your dream home a reality."
         />
-        <meta type="og:author" content="Peyton Cleveland" />
-        <meta type="og:url" content="https://madisonbuilders.com" />
+
+        <meta property="og:type" content="website" />
         <meta
-          type="og:image"
-          content="https://firebasestorage.googleapis.com/v0/b/madison-builders.appspot.com/o/Screen%20Shot%202022-06-21%20at%206.11.18%20PM.png?alt=media&token=7344ca45-e6ca-4728-b9b3-3a3ac09f73ec"
+          property="og:url"
+          content="https://madisonbuilders.llc/promos/july-free-plan-special"
         />
-        <meta type="og:type" content="website" />
+        <meta property="og:title" content="Madison Builders - Free Plan July" />
+        <meta
+          property="og:description"
+          content="For the entire month of July when you start a custom home build with Madison Builders we'll give you the plan of your dreams 100% free.  Choose from over 50k+ house plans and let us make your dream home a reality."
+        />
+        <meta property="og:image" content="" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://madisonbuilders.llc/promos/july-free-plan-special"
+        />
+        <meta
+          property="twitter:title"
+          content="Madison Builders - Free Plan July"
+        />
+        <meta
+          property="twitter:description"
+          content="For the entire month of July when you start a custom home build with Madison Builders we'll give you the plan of your dreams 100% free.  Choose from over 50k+ house plans and let us make your dream home a reality."
+        />
       </Head>
       <div className="w-full container pt-28 pb-32 flex flex-col gap-2 relative">
         <div className="absolute w-[190px] h-[94px] bottom-2 left-72 rounded-lg overflow-hidden animate-slide">
