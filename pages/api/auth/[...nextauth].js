@@ -18,7 +18,10 @@ export default NextAuth({
   callbacks: {
     async session({ session }) {
       if (session.user) {
-        const q = query(usersRef, where("email", "==", session.user.email));
+        const q = query(
+          usersRef,
+          where("email", "==", session.user.email?.toLowerCase())
+        );
         const querySnapshot = await getDocs(q);
         const userData = querySnapshot.docs[0]?.data();
         session.userData = userData;
@@ -44,8 +47,13 @@ export default NextAuth({
         didToken: { label: "DID Token", type: "text" }
       },
       async authorize({ didToken }, req) {
-        // validate magic DID token
-        magic.token.validate(didToken);
+        try {
+          // validate magic DID token
+          magic.token.validate(didToken);
+        } catch (error) {
+          console.log(error);
+          console.log("did", didToken);
+        }
 
         // fetch user metadata
         const metadata = await magic.users.getMetadataByToken(didToken);

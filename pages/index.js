@@ -74,7 +74,7 @@ const Home = () => {
   return (
     <>
       <div className="container h-[500px] flex flex-col justify-end bg-white">
-        <h1 className="text-indigo-900 text-3xl mb-2">
+        <h1 className="text-indigo-800 text-3xl mb-2">
           Alabama&apos;s Premier <strong>Custom Home Builder</strong>
         </h1>
         <h2 className="text-gray-700 font-sans font-light">
