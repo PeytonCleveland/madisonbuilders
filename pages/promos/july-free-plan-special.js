@@ -26,8 +26,8 @@ const JulyPromo = ({ plans }) => {
           <strong>July Free Plan Special!</strong>
         </h1>
         <h2 className="text-gray-700 font-sans font-light">
-          Start a new custom home build with Madison Builders and we'll give you
-          the plan free!
+          Start a new custom home build with Madison Builders and we&apos;ll
+          give you the plan free!
         </h2>
         <button className="flex mt-4 w-fit justify-center items-center bg-gradient-to-br from-indigo-700 to-indigo-800 text-white px-6 py-[5px] font-semibold text-lg rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
           Search plans
