@@ -139,7 +139,7 @@ const JulyPromo = ({ plans }) => {
 export default JulyPromo;
 
 export async function getServerSideProps() {
-  const plans = await fetch("http://localhost:3000/api/featuredPlans");
+  const plans = await fetch("https://madisonbuilders.llc/api/featuredPlans");
   return {
     props: { plans: await plans.json() }
   };
