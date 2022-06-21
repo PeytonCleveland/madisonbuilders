@@ -11,7 +11,7 @@ const PlanCard = ({ plan, key }) => {
       key={key}
       className="snap-start bg-white w-[310px] flex-shrink-0 h-[225px] mr-6 flex flex-col items-center justify-between shadow-md rounded-lg overflow-hidden"
     >
-      <div className="flex w-full h-40 min-h-[160px] relative">
+      <div className="flex w-full h-40 min-h-[160px] relative rounded-t-lg">
         <Image src={plan.featuredImage} objectFit={"cover"} layout="fill" />
       </div>
       <div className="flex flex-col w-full h-full py-4 px-3 pl-4 justify-center">
