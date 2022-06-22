@@ -4,6 +4,7 @@ import Slider from "rc-slider";
 import Image from "next/image";
 import "rc-slider/assets/index.css";
 import timeSince from "../utils/time-since";
+import Head from "next/head";
 
 const Home = () => {
   const blogPosts = [
@@ -73,6 +74,33 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Madison Builders</title>
+        <meta type="og:title" content="Madison Builders" />
+        <meta
+          type="og:description"
+          content="Madison Builders is Alabama's premier custom home builder, focused on utilizing the latest in building science to construct high-performing, energy-efficient homes."
+        />
+        <meta type="og:author" content="Peyton Cleveland" />
+        <meta type="og:url" content="https://madisonbuilders.com" />
+        <meta
+          type="og:image"
+          content="https://madisonbuilders.com/madison-builders.png"
+        />
+        <meta type="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@madisonbuilders" />
+        <meta name="twitter:creator" content="@madisonbuilders" />
+        <meta name="twitter:title" content="Madison Builders" />
+        <meta
+          name="twitter:description"
+          content="Madison Builders is Alabama's premier custom home builder, focused on utilizing the latest in building science to construct high-performing, energy-efficient homes."
+        />
+        <meta
+          name="twitter:image"
+          content="https://madisonbuilders.com/madison-builders.png"
+        />
+      </Head>
       <div className="container h-[500px] flex flex-col justify-end bg-white">
         <h1 className="text-indigo-800 text-3xl mb-2">
           Alabama&apos;s Premier <strong>Custom Home Builder</strong>
