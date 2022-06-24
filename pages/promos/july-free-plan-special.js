@@ -172,7 +172,7 @@ const JulyPromo = ({ plans }) => {
             </div>
             <p className="text-gray-300 font-light font-sans text-sm ml-[54px] mb-2">
               As an Architectural Designs builder partner, we have access to
-              over 31k house plans for you to choose from. Find the home of your
+              over 30k house plans for you to choose from. Find the home of your
               dreams, then let us make your dream come to life.
             </p>
           </div>
