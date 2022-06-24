@@ -11,7 +11,7 @@ const PageNotFound = () => {
         alt="No Found Page"
         priority
       />
-      <h1 className="text-6xl text-center text-indigo-900 font-semibold">
+      <h1 className="text-6xl text-center text-indigo-800 font-semibold">
         404
       </h1>
       <p className="text-lg text-indigo-900 font-light text-center">
