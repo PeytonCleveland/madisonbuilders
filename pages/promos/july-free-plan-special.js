@@ -45,7 +45,7 @@ const JulyPromo = ({ plans }) => {
             src={plans[0].featuredImage}
             layout="fill"
             objectFit="cover"
-            priority
+            priority={true}
             alt={plans[0].planNumber}
           />
         </div>
@@ -54,7 +54,7 @@ const JulyPromo = ({ plans }) => {
             src={plans[3].featuredImage}
             layout="fill"
             objectFit="cover"
-            priority
+            priority={true}
             alt={plans[3].planNumber}
           />
         </div>
@@ -63,7 +63,7 @@ const JulyPromo = ({ plans }) => {
             src={plans[1].featuredImage}
             layout="fill"
             objectFit="cover"
-            priority
+            priority={true}
             alt={plans[1].planNumber}
           />
         </div>
@@ -72,7 +72,7 @@ const JulyPromo = ({ plans }) => {
             src={plans[4].featuredImage}
             layout="fill"
             objectFit="cover"
-            priority
+            priority={true}
             alt={plans[4].planNumber}
           />
         </div>
@@ -90,7 +90,7 @@ const JulyPromo = ({ plans }) => {
             src={plans[5].featuredImage}
             layout="fill"
             objectFit="cover"
-            priority
+            priority={true}
             alt={plans[5].planNumber}
           />
         </div>
@@ -99,7 +99,7 @@ const JulyPromo = ({ plans }) => {
             src={plans[2].featuredImage}
             layout="fill"
             objectFit="cover"
-            priority
+            priority={true}
             alt={plans[2].planNumber}
           />
         </div>
@@ -108,7 +108,7 @@ const JulyPromo = ({ plans }) => {
             src={plans[6].featuredImage}
             layout="fill"
             objectFit="cover"
-            priority
+            priority={true}
             alt={plans[6].planNumber}
           />
         </div>
@@ -148,7 +148,7 @@ const JulyPromo = ({ plans }) => {
             Builders we&apos;ll provide the plan of your choice for free. Simply
             pick your plan from our selection of 30k+ plans, use our client
             portal to pick your finishes and get a customized estimate, then
-            sign a custom build contract when you're ready to get started.
+            sign a custom build contract when you&apos;re ready to get started.
           </p>
           <p className="text-[11px] text-gray-400 font-sans font-light mt-2">
             <i>
@@ -187,8 +187,9 @@ const JulyPromo = ({ plans }) => {
               </h3>
             </div>
             <p className="text-gray-300 font-light font-sans text-sm ml-[54px] mb-2">
-              Once you've found your dream plan, use our client portal to select
-              your finishes and get a customized estimate to build your home.
+              Once you&apos;ve found your dream plan, use our client portal to
+              select your finishes and get a customized estimate to build your
+              home.
             </p>
           </div>
 
@@ -202,8 +203,8 @@ const JulyPromo = ({ plans }) => {
               </h3>
             </div>
             <p className="text-gray-300 font-light font-sans text-sm ml-[54px] mb-2">
-              Once you're ready to begin, use our client portal to view your
-              construction contract and schedule a date to sign. Madison
+              Once you&apos;re ready to begin, use our client portal to view
+              your construction contract and schedule a date to sign. Madison
               Builders will provide the plan for your custom home absolutely
               free of charge!
             </p>
