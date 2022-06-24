@@ -5,6 +5,7 @@ import Image from "next/image";
 import "rc-slider/assets/index.css";
 import timeSince from "../utils/time-since";
 import Head from "next/head";
+import Script from "next/script";
 
 const Home = () => {
   const blogPosts = [
@@ -101,15 +102,19 @@ const Home = () => {
           content="https://madisonbuilders.com/madison-builders.png"
         />
 
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-177583514-1"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'UA-177583514-1');
-        </script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=UA-177583514-1" />
+        <Script
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'UA-177583514-1');
+                  `
+          }}
+        />
       </Head>
       <div className="container h-[500px] flex flex-col justify-end bg-white">
         <h1 className="text-indigo-800 text-3xl mb-2">
