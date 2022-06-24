@@ -100,6 +100,16 @@ const Home = () => {
           name="twitter:image"
           content="https://madisonbuilders.com/madison-builders.png"
         />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-177583514-1"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'UA-177583514-1');
+        </script>
       </Head>
       <div className="container h-[500px] flex flex-col justify-end bg-white">
         <h1 className="text-indigo-800 text-3xl mb-2">
