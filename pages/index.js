@@ -104,6 +104,7 @@ const Home = () => {
       </Head>
       <Script src="https://www.googletagmanager.com/gtag/js?id=UA-177583514-1" />
       <Script
+        id="google-analytics"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
