@@ -37,13 +37,17 @@ const Header = () => {
   return (
     <header className="container flex w-full h-20 justify-between items-center fixed bg-white z-50">
       <div className="flex">
-        <Image
-          src="/madison-builders.png"
-          alt="Madison Builders Logo"
-          width={47}
-          height={38}
-          priority={true}
-        />
+        <Link href="/" passHref>
+          <a>
+            <Image
+              src="/madison-builders.png"
+              alt="Madison Builders Logo"
+              width={47}
+              height={38}
+              priority={true}
+            />
+          </a>
+        </Link>
         <div className="hidden md:flex">
           {links.map((link) => (
             <HeaderLink key={link.text} {...link} />

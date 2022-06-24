@@ -105,8 +105,9 @@ const Home = () => {
         <h1 className="text-indigo-800 text-3xl mb-2">
           Alabama&apos;s Premier <strong>Custom Home Builder</strong>
         </h1>
-        <h2 className="text-gray-700 font-sans font-light">
-          Lorem ipsum dolor sit amet consectetor adpiscing elit sed do eiusmod
+        <h2 className="text-gray-700 font-sans font-light text-sm">
+          We specialize in constructing the most high-performing, energy
+          efficient custom homes in Alabama
         </h2>
         <div className="flex mt-6 mb-32">
           <button className="flex flex-1 mr-2 justify-center items-center border-2 border-indigo-700 text-indigo-700 px-5 py-[5px] font-semibold text-lg rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
