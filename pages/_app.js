@@ -40,6 +40,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="msapplication-TileColor" content="#603cba" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta
+          name="keywords"
+          content="home builder, custom home builder, custom home, construction, residential construction, madison builders, madison, madison builders llc, builder, new construction, alabama, building science, house plans, custom house plans"
+        />
       </Head>
       <SessionProvider session={session}>
         <Auth>
