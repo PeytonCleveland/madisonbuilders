@@ -106,7 +106,7 @@ const Home = () => {
           Alabama&apos;s Premier <strong>Custom Home Builder</strong>
         </h1>
         <h2 className="text-gray-700 font-sans font-light text-sm">
-          We specialize in constructing the most high-performing, energy
+          We specialize in constructing the most high performing, energy
           efficient custom homes in Alabama
         </h2>
         <div className="flex mt-6 mb-32">
