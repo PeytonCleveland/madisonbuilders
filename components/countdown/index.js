@@ -34,7 +34,7 @@ const Countdown = ({ date }) => {
 
   return (
     <div className="w-fit bg-gradient-to-br from-indigo-200 to-indigo-300 rounded-full shadow py-2 px-4 flex justify-between gap-2">
-      <p className="text-xs text-gray-900 font-semibold">Promo Ends:</p>
+      <p className="text-xs text-gray-900 font-semibold">Promotion Ends:</p>
       <p className="text-xs text-gray-900 font-mono font-semibold">
         {convertMsToTime(timeRemaining.total)}
       </p>
