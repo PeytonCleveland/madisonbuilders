@@ -42,6 +42,7 @@ const Header = () => {
           alt="Madison Builders Logo"
           width={47}
           height={38}
+          priority={true}
         />
         <div className="hidden md:flex">
           {links.map((link) => (
