@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Spinner } from "../../components";
 import Head from "next/head";
+import addUserToMailchimp from "../../api/mailchimp";
 
 // magic-sdk is only availabile in the browser
 const magic =
@@ -22,6 +23,8 @@ export default function ClientLogin() {
     if (!magic) throw new Error(`magic not defined`);
 
     setLoading(true);
+
+    addUserToMailchimp(email);
 
     // login with Magic
     const didToken = await magic.auth.loginWithMagicLink({ email });
