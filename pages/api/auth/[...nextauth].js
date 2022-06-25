@@ -15,6 +15,31 @@ export default NextAuth({
     // override signIn page so we can integrate with Magic
     signIn: "/auth/client-login"
   },
+  callbacks: {
+    async session({ session }) {
+      if (session.user) {
+        const q = query(
+          usersRef,
+          where("email", "==", session.user.email?.toLowerCase())
+        );
+        const querySnapshot = await getDocs(q);
+        const userData = querySnapshot.docs[0]?.data();
+        session.userData = userData;
+        if (!userData) {
+          // Create a new user in firebase
+          await addDoc(collection(db, "users"), {
+            email: session.user.email,
+            onboarded: false
+          });
+          session.userData = {
+            email: session.user.email,
+            onboarded: false
+          };
+        }
+      }
+      return session;
+    }
+  },
   providers: [
     CredentialsProvider({
       name: "Magic Link",
