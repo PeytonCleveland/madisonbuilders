@@ -47,13 +47,7 @@ export default NextAuth({
         didToken: { label: "DID Token", type: "text" }
       },
       async authorize({ didToken }, req) {
-        try {
-          // validate magic DID token
-          magic.token.validate(didToken);
-        } catch (error) {
-          console.log(error);
-          console.log("did", didToken);
-        }
+        magic.token.validate(didToken);
 
         // fetch user metadata
         const metadata = await magic.users.getMetadataByToken(didToken);
