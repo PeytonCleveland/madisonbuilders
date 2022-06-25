@@ -13,8 +13,8 @@ export default async function handler(req, res) {
         { headers: { Authorization: `Basic ${process.env.MAILCHIMP_API_KEY}` } }
       );
       res.status(200).json({ email: req.body });
-    } catch {
-      res.status(500).json({ error: "failed to post data" });
+    } catch (error) {
+      res.status(500).json({ error: error });
     }
   } else {
     res.status(405).json({ error: "method not allowed" });
