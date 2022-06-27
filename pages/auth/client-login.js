@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Spinner } from "../../components";
 import Head from "next/head";
-import addUserToMailchimp from "../../api/mailchimp";
+import addUserToMailchimp from "../../api-client/mailchimp";
 
 // magic-sdk is only availabile in the browser
 const magic =
