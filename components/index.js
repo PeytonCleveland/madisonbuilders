@@ -1,3 +1,4 @@
+export { default as Banner } from "./banner";
 export { default as Countdown } from "./countdown";
 export { default as Footer } from "./footer";
 export { default as Header } from "./header";
