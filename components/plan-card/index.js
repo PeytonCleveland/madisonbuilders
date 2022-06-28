@@ -1,14 +1,13 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-const PlanCard = ({ plan, key }) => {
+const PlanCard = ({ plan }) => {
   const router = useRouter();
   return (
     <div
       onClick={() => {
         router.push(`/plans/${plan.planNumber}`);
       }}
-      key={key}
       className="snap-start bg-white w-[310px] flex-shrink-0 h-[225px] mr-6 flex flex-col items-center justify-between shadow-md rounded-lg overflow-hidden"
     >
       <div className="flex w-full h-40 min-h-[160px] relative rounded-t-lg overflow-hidden">
