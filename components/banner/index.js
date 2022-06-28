@@ -7,8 +7,8 @@ const Banner = () => {
         July free plan special happening now!&nbsp;&nbsp;
       </p>
       <Link href="/promos/july-free-plan-special" passHref>
-        <a className="text-xs text-teal-300 font-light font-sans flex items-center">
-          Learn more{" "}
+        <a className="text-xs text-teal-300 font-sans flex items-center">
+          <strong>Learn more</strong>{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 ml-0.5 mt-[1px]"
