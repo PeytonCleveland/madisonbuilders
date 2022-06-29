@@ -203,7 +203,7 @@ const Home = () => {
           </h3>
         </div>
         <p className="text-gray-800 font-light font-sans text-sm mt-2 ml-[54px] mb-8">
-          If you have a lot that you intend to build on, we'll need the lot
+          If you have a lot that you intend to build on, we&apos;ll need the lot
           information. If you need a lot, reach out to our realtor friends
           at&nbsp;
           <a
@@ -242,9 +242,9 @@ const Home = () => {
           </h3>
         </div>
         <p className="text-gray-800 font-light pr-4 font-sans text-sm mt-2 ml-[54px] mb-8">
-          Utilize our client portal to choose the finishes for your home. We'll
-          use the details you provide to create a customized estimate to build
-          your home.
+          Utilize our client portal to choose the finishes for your home.
+          We&apos;ll use the details you provide to create a customized estimate
+          to build your home.
         </p>
         <div className="flex items-center">
           <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
@@ -256,8 +256,8 @@ const Home = () => {
         </div>
         <p className="text-gray-800 font-light pr-6 font-sans text-sm mt-2 ml-[54px] mb-8">
           When you are ready to build, use our client portal to schedule a date
-          to sign your new construction contract. After that, we'll get started
-          and bring your dream home to life!
+          to sign your new construction contract. After that, we&apos;ll get
+          started and bring your dream home to life!
         </p>
       </div>
 
