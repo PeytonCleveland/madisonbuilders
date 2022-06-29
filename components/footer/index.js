@@ -19,7 +19,7 @@ const Footer = () => {
               peyton@madisonbuilders.llc
             </a>
           </Link>
-          <Link href="mailto:peyton@madisonbuilders.llc" passHref>
+          <Link href="tel:3347829357" passHref>
             <a className="text-xs text-white">334.782.9357</a>
           </Link>
           <p className="text-white text-sm font-sans mt-3 mb-2 font-semibold">
@@ -36,17 +36,20 @@ const Footer = () => {
                 />
               </a>
             </Link>
-            <Link href="https://facebook.com/madisonbuilders" passHref>
+            <Link href="https://www.instagram.com/madisonbuilders/" passHref>
               <a>
                 <Image
                   src="/instagram.png"
                   width={24}
                   height={24}
-                  alt="facebook"
+                  alt="instagram"
                 />
               </a>
             </Link>
-            <Link href="https://facebook.com/madisonbuilders" passHref>
+            <Link
+              href="https://www.linkedin.com/company/madison-builders"
+              passHref
+            >
               <a>
                 <Image
                   src="/linkedin.png"

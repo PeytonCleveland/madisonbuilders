@@ -37,8 +37,8 @@ const Header = () => {
     : "opacity-0 flex flex-col w-screen h-screen bg-indigo-50 absolute -top-[900px] left-0 -z-10 transition-all duration-500 ease-in-out p-4 pt-[21px]";
 
   const headerStyle = promoPage
-    ? "container flex w-full h-20 justify-between items-center fixed bg-white z-40"
-    : "container flex w-full h-20 justify-between items-center fixed bg-white z-40 top-8";
+    ? "container flex w-full h-[70px] justify-between items-center fixed bg-white z-40"
+    : "container flex w-full h-[70px] justify-between items-center fixed bg-white z-40 top-8";
 
   return (
     <>
@@ -53,6 +53,7 @@ const Header = () => {
                 width={47}
                 height={38}
                 priority={true}
+                quality={95}
               />
             </a>
           </Link>
