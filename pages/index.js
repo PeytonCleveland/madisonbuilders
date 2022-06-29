@@ -50,7 +50,7 @@ const Home = () => {
 
   const [mortgage, setMortgage] = useState({
     amount: 350_000,
-    rate: 3.5,
+    rate: 4.5,
     term: 30,
     downPayment: 25_000
   });
@@ -156,10 +156,11 @@ const Home = () => {
         <h3 className="text-white text-xl mb-2">
           Discover <strong>Our Difference</strong>
         </h3>
-        <p className="text-gray-200 font-light font-sans text-sm mb-6 pr-8">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam quis nostrud exercitation ullamco laboris.
+        <p className="text-gray-200 font-light font-sans text-sm mb-6 pr-4">
+          Madison Builders is a custom home builder that is dedicated to
+          utilizing the finest materials and best practices that building
+          science has to offer. We pride ourselves on building beautiful,
+          high-performing homes that will last for generations to come.
         </p>
         <button className="w-fit bg-white text-indigo-900 px-5 py-[5px] font-semibold text-lg rounded-full mb-10 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
           Learn more
@@ -181,10 +182,17 @@ const Home = () => {
             Determine your <strong>budget</strong>
           </h3>
         </div>
-        <p className="text-gray-800 font-light font-sans text-sm mt-2 ml-[54px] mb-8">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam quis nostrud exercitation ullamco laboris.
+        <p className="text-gray-800 font-light pr-6 font-sans text-sm mt-2 ml-[54px] mb-8">
+          Determine the budget for your custom build. If you do not yet have a
+          lot, be sure to consider the cost of land when determining your
+          budget. Use our{" "}
+          <a
+            className="text-indigo-600 font-semibold text-sm"
+            href="#calculator"
+          >
+            mortgage calculator
+          </a>{" "}
+          below to estimate your monthly payment.
         </p>
         <div className="flex items-center">
           <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
@@ -195,35 +203,61 @@ const Home = () => {
           </h3>
         </div>
         <p className="text-gray-800 font-light font-sans text-sm mt-2 ml-[54px] mb-8">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam quis nostrud exercitation ullamco laboris.
+          If you have a lot that you intend to build on, we'll need the lot
+          information. If you need a lot, reach out to our realtor friends
+          at&nbsp;
+          <a
+            className="text-indigo-600 font-semibold text-sm"
+            href="https://myriverrockrealty.com/staff/meagan-thrash-2/"
+          >
+            Exit River Rock Realty.
+          </a>
         </p>
         <div className="flex items-center">
           <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
             <h4 className="text-xl text-indigo-900">03</h4>
           </div>
           <h3 className="text-xl text-indigo-900">
-            Design your <strong>houseplan</strong>
+            Choose your <strong>houseplan</strong>
           </h3>
         </div>
-        <p className="text-gray-800 font-light font-sans text-sm mt-2 ml-[54px] mb-8">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam quis nostrud exercitation ullamco laboris.
+        <p className="text-gray-800 font-light font-sans pr-4 text-sm mt-2 ml-[54px] mb-8">
+          We are an{" "}
+          <a
+            className="text-indigo-600 font-semibold text-sm"
+            href="https://www.architecturaldesigns.com/"
+          >
+            Architectural Designs
+          </a>{" "}
+          builder partner, giving us access to over 30k houseplans for you to
+          choose from. Browse our selection to find your dream plan, or bring
+          your own!
         </p>
         <div className="flex items-center">
           <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
             <h4 className="text-xl text-indigo-900">04</h4>
           </div>
           <h3 className="text-xl text-indigo-900">
-            Design your <strong>houseplan</strong>
+            Select your <strong>finishes</strong>
           </h3>
         </div>
-        <p className="text-gray-800 font-light font-sans text-sm mt-2 ml-[54px] mb-8">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam quis nostrud exercitation ullamco laboris.
+        <p className="text-gray-800 font-light pr-4 font-sans text-sm mt-2 ml-[54px] mb-8">
+          Utilize our client portal to choose the finishes for your home. We'll
+          use the details you provide to create a customized estimate to build
+          your home.
+        </p>
+        <div className="flex items-center">
+          <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
+            <h4 className="text-xl text-indigo-900">05</h4>
+          </div>
+          <h3 className="text-xl text-indigo-900">
+            Start your <strong>build</strong>
+          </h3>
+        </div>
+        <p className="text-gray-800 font-light pr-6 font-sans text-sm mt-2 ml-[54px] mb-8">
+          When you are ready to build, use our client portal to schedule a date
+          to sign your new construction contract. After that, we'll get started
+          and bring your dream home to life!
         </p>
       </div>
 
@@ -232,12 +266,12 @@ const Home = () => {
           Unmatched <strong>Transparency</strong>
         </h3>
         <p className="text-gray-200 font-light font-sans text-sm mb-4 pr-8">
-          Madison Builders&apos; customer portal allows unparalleled
-          transparency into the homebuilding process.
+          Madison Builders&apos; client portal allows unparalleled transparency
+          into the homebuilding process.
         </p>
-        <Link href="/" passHref>
+        <Link href="/client-portal" passHref>
           <a className="mb-4 text-teal-300 flex items-center text-sm font-sans">
-            Explore customer portal
+            Explore client portal
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -266,7 +300,7 @@ const Home = () => {
         <div className="w-full h-52 bg-gray-600 -mb-10"></div>
       </div>
 
-      <div className="container pt-20 pb-10">
+      <div className="container pt-20 pb-10" id="calculator">
         <h3 className="text-indigo-900 text-xl mb-2">
           Mortgage <strong>Calculator</strong>
         </h3>
@@ -395,7 +429,7 @@ const Home = () => {
 
         <div className="bg-indigo-100 p-5 pt-[19px] rounded-md mt-6 shadow-md flex flex-col items-center">
           <label className="block text-indigo-900 text-sm mb-1">
-            Monthly Payment
+            Estimated Monthly Payment
           </label>
           <h5 className="text-4xl">
             $

@@ -12,6 +12,7 @@ const Footer = () => {
               width={145}
               height={35}
               alt="Madison Builders"
+              lazyBoundary="450px"
             />
           </div>
           <Link href="mailto:peyton@madisonbuilders.llc" passHref>
@@ -116,6 +117,7 @@ const Footer = () => {
             width={47}
             height={47}
             alt="2-10 Home Warranty"
+            lazyBoundary="450px"
           />
           <Image
             src="/eho.png"
@@ -123,6 +125,7 @@ const Footer = () => {
             height={54}
             alt="Equal Housing Opportunity"
             className="ml-1"
+            lazyBoundary="450px"
           />
         </div>
         <h5 className="text-center text-indigo-200 text-xs">
