@@ -46,12 +46,12 @@ const Header = () => {
       <header className={headerStyle}>
         <div className="flex items-center">
           <Link href="/" passHref>
-            <a>
+            <a className="mt-[2px]">
               <Image
                 src="/madison-builders.png"
                 alt="Madison Builders Logo"
-                width={44}
-                height={34}
+                width={46}
+                height={35}
                 priority={true}
                 quality={95}
               />
