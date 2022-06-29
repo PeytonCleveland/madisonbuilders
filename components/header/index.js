@@ -44,14 +44,14 @@ const Header = () => {
     <>
       {!promoPage && <Banner />}
       <header className={headerStyle}>
-        <div className="flex">
+        <div className="flex items-center">
           <Link href="/" passHref>
             <a>
               <Image
                 src="/madison-builders.png"
                 alt="Madison Builders Logo"
-                width={47}
-                height={38}
+                width={44}
+                height={34}
                 priority={true}
                 quality={95}
               />
