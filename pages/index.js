@@ -289,7 +289,15 @@ const Home = () => {
         <h3 className="text-white mb-3">
           Choose finishes <strong>for your home</strong>
         </h3>
-        <div className="w-full h-52 bg-gray-600 mb-8"></div>
+        <div className="w-full h-52 mb-8 flex relative">
+          <Image
+            src="/finishes.png"
+            alt="finishes"
+            layout="fill"
+            objectFit="cover"
+            priority={true}
+          />
+        </div>
         <h3 className="text-white mb-3">
           Make change orders <strong>in minutes</strong>
         </h3>
