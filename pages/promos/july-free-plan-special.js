@@ -228,7 +228,7 @@ const JulyPromo = ({ plans }) => {
             ))}
           </div>
           <button className="w-fit bg-white text-indigo-900 px-5 py-[5px] gap-1 flex justify-center items-center font-semibold rounded-full mt-2 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
-            View all plans{" "}
+            View more plans{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
