@@ -20,8 +20,8 @@ const Footer = () => {
               peyton@madisonbuilders.llc
             </a>
           </Link>
-          <Link href="tel:3347829357" passHref>
-            <a className="text-xs text-white">334.782.9357</a>
+          <Link href="tel:3347885522" passHref>
+            <a className="text-xs text-white">334.788.5522</a>
           </Link>
           <p className="text-white text-sm font-sans mt-3 mb-2 font-semibold">
             Follow us!
