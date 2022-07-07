@@ -209,7 +209,7 @@ const Contact = () => {
           <div className="bg-indigo-900 p-2 rounded-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-white"
+              className="h-5 w-5 text-white"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
