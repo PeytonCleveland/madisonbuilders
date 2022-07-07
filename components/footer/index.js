@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
           <Link href="mailto:peyton@madisonbuilders.llc" passHref>
             <a className="text-xs text-white mt-2 mb-0.5">
-              peyton@madisonbuilders.llc
+              contact@madisonbuilders.llc
             </a>
           </Link>
           <Link href="tel:3347885522" passHref>

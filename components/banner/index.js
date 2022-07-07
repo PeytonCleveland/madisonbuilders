@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <div className="w-full h-8 bg-gradient-to-br from-indigo-800 to-indigo-900 flex justify-center items-center z-50 fixed container">
+    <div className="w-full h-8 bg-gradient-to-br from-indigo-700 to-indigo-800 flex justify-center items-center z-50 fixed container">
       <p className="text-xs text-white font-light font-sans">
         July free plan special happening now!&nbsp;&nbsp;
       </p>

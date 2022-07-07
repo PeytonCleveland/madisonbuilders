@@ -128,25 +128,27 @@ const Home = () => {
           <button className="flex flex-1 mr-2 justify-center items-center border-2 border-indigo-700 text-indigo-700 px-5 py-[5px] font-semibold text-lg rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
             Our Process
           </button>
-          <button className="flex flex-1 ml-2 justify-center items-center bg-gradient-to-br from-indigo-700 to-indigo-800 text-white px-5 py-[5px] font-semibold text-lg rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
-            Let&apos;s Talk{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-1"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
+          <Link href="/contact" passHref>
+            <a className="flex flex-1 ml-2 justify-center items-center bg-gradient-to-br from-indigo-700 to-indigo-800 text-white px-5 py-[5px] font-semibold text-lg rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
+              Let&apos;s Talk{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 ml-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+          </Link>
         </div>
       </div>
 
-      <div className="w-screen container bg-gradient-to-br from-indigo-800 to-indigo-900 flex flex-col justify-center">
+      <div className="w-screen container bg-gradient-to-br from-indigo-700 to-indigo-800 flex flex-col justify-center">
         <video
           className="-mt-12 rounded-lg mb-8"
           controls
@@ -449,7 +451,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-br from-indigo-800 to-indigo-900 w-full container pt-12 pb-14">
+      <div className="bg-gradient-to-br from-indigo-700 to-indigo-800 w-full container pt-12 pb-14">
         <h3 className="text-white text-xl mb-4">
           Explore Our <strong>Blog</strong>
         </h3>
