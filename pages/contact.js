@@ -2,10 +2,18 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
+import { Spinner } from "../components";
+import Head from "next/head";
+import Script from "next/script";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   let timeoutId = null;
+
+  const buttonStyle = showSuccessMessage
+    ? "mt-1 bg-gradient-to-br from-green-600 to-green-700 w-full py-3 rounded-full text-white text-lg font-medium flex items-center justify-center shadow-md gap-2"
+    : "mt-1 bg-gradient-to-br from-indigo-700 to-indigo-800 w-full py-3 rounded-full text-white text-lg font-medium flex items-center justify-center shadow-md gap-2";
 
   const {
     register,
@@ -30,6 +38,8 @@ const Contact = () => {
     setValue("email", "");
     setValue("message", "");
     setLoading(false);
+    setShowSuccessMessage(true);
+    setTimeout(clearSuccessMessage, 3000);
   };
 
   const cancelTimeout = () => {
@@ -37,8 +47,53 @@ const Contact = () => {
       clearTimeout(timeoutId);
     }
   };
+
+  const clearSuccessMessage = () => {
+    setShowSuccessMessage(false);
+  };
   return (
     <>
+      <Head>
+        <title>Madison Builders - Contact Us</title>
+        <meta type="og:title" content="Madison Builders - Contact Us" />
+        <meta
+          type="og:description"
+          content="Madison Builders is Alabama's premier custom home builder, focused on utilizing the latest in building science to construct high-performing, energy-efficient homes."
+        />
+        <meta type="og:author" content="Peyton Cleveland" />
+        <meta type="og:url" content="https://madisonbuilders.com" />
+        <meta
+          type="og:image"
+          content="https://madisonbuilders.com/madison-builders.png"
+        />
+        <meta type="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@madisonbuilders" />
+        <meta name="twitter:creator" content="@madisonbuilders" />
+        <meta name="twitter:title" content="Madison Builders" />
+        <meta
+          name="twitter:description"
+          content="Madison Builders is Alabama's premier custom home builder, focused on utilizing the latest in building science to construct high-performing, energy-efficient homes."
+        />
+        <meta
+          name="twitter:image"
+          content="https://madisonbuilders.com/madison-builders.png"
+        />
+      </Head>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=UA-177583514-1" />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'UA-177583514-1');
+                  `
+        }}
+      />
       <div className="container w-full flex flex-col pt-36 pb-16">
         <h1 className="text-gray-900 font-medium text-2xl">
           We&apos;d love to hear from you,
@@ -110,28 +165,46 @@ const Contact = () => {
               }
             />
           </div>
-          <button
-            className="mt-1 bg-gradient-to-br from-indigo-700 to-indigo-800 w-full py-3 rounded-full text-white text-lg font-medium flex items-center justify-center shadow-md gap-2"
-            type="Submit"
-          >
-            Send your message
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
+          <button className={buttonStyle} type="Submit">
+            {showSuccessMessage
+              ? "Message sent"
+              : loading
+              ? "Sending your message"
+              : "Send your message"}
+            {showSuccessMessage ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            ) : loading ? (
+              <Spinner size="sm" />
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            )}
           </button>
         </form>
       </div>
-      <div className="container w-full bg-gradient-to-br from-indigo-700 to-indigo-800 flex flex-col py-12 gap-3">
-        <h2 className="text-white text-3xl font-medium">Contact info</h2>
+      <div className="container w-full bg-gradient-to-br from-indigo-700 to-indigo-800 flex flex-col py-8 gap-3">
+        <h2 className="text-white text-2xl font-medium">Contact info</h2>
         <div className="flex items-center gap-3">
           <div className="bg-indigo-900 p-2 rounded-lg">
             <svg

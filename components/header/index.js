@@ -127,9 +127,14 @@ const Header = () => {
                     Client portal
                   </a>
                 </Link>
-                <button className="w-full  bg-gradient-to-br from-indigo-700 to-indigo-800 shadow-md text-white text-2xl font-regular rounded-full py-[9px]">
-                  Let&apos;s talk
-                </button>
+                <Link href="/contact" passHref>
+                  <a
+                    onClick={() => setIsOpen(false)}
+                    className="w-full bg-gradient-to-br from-indigo-700 to-indigo-800 shadow-md text-white text-2xl font-regular rounded-full py-[9px] flex justify-center items-center"
+                  >
+                    Let&apos;s talk
+                  </a>
+                </Link>
               </>
             ) : (
               <button
