@@ -40,9 +40,9 @@ const Contact = () => {
   return (
     <div className="container w-full flex flex-col pt-36 pb-20">
       <h1 className="text-gray-900 font-medium text-2xl">
-        We'd love to hear from you,
+        We&apos;d love to hear from you,
         <br />
-        let's chat! 👋
+        let&apos;s chat! 👋
       </h1>
       <form
         className="mt-6 flex flex-col gap-4"
