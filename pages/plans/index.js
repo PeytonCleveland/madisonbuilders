@@ -38,7 +38,7 @@ const Plans = ({ housePlans }) => {
                 onClick={() => {
                   router.push(`/plans/${plan.planNumber}`);
                 }}
-                key={planNumber}
+                key={plan.planNumber}
                 className=" bg-white w-full h-[225px] mr-6 flex flex-col items-center justify-between shadow-md rounded-lg overflow-hidden"
               >
                 <div className="flex w-full h-40 min-h-[160px] relative rounded-t-lg overflow-hidden">
