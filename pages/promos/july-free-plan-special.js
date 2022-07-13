@@ -1,6 +1,7 @@
 import { Countdown, PlanCard } from "../../components";
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 
 const JulyPromo = ({ plans }) => {
   return (
@@ -227,21 +228,23 @@ const JulyPromo = ({ plans }) => {
               <PlanCard plan={plan} key={plan.planNumber} />
             ))}
           </div>
-          <button className="w-fit bg-white text-indigo-900 px-5 py-[5px] gap-1 flex justify-center items-center font-semibold rounded-full mt-2 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
-            View more plans{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
+          <Link href="/plans" passHref>
+            <a className="w-fit bg-white text-indigo-900 px-5 py-[5px] gap-1 flex justify-center items-center font-semibold rounded-full mt-2 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
+              View more plans{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-1 bg-white rounded-lg p-4 shadow-md">
