@@ -88,7 +88,7 @@ const Plans = ({ housePlans }) => {
       </div>
       <div className="container w-full bg-gradient-to-br from-indigo-700 to-indigo-800 pt-8 pb-9 flex flex-col gap-4">
         <h4 className="text-white">
-          Don't see the perfect plan? View all 30k+ plans on Architectural
+          Don&apos;t see the perfect plan? View all 30k+ plans on Architectural
           Designs!
         </h4>
         <Link href="https://architecturaldesigns.com" passHref>
