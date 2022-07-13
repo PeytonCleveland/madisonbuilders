@@ -7,9 +7,9 @@ const Plan = ({ plan }) => {
 export default Plan;
 
 export async function getServerSideProps(context) {
-  const planNumber = context.query;
+  const query = context.query;
   const plan = await fetch(
-    `https://madisonbuilders.llc/api/plans?planNumber=${planNumber}`
+    `https://madisonbuilders.llc/api/plans?planNumber=${query.plan}`
   );
   return {
     props: { plan: await plan.json() }

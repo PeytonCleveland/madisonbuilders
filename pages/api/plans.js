@@ -11,7 +11,9 @@ export default async function handler(req, res) {
   );
 
   const querySnapshot = await getDocs(q);
-  if (querySnapshot.length === 0) res.status(404);
+  const plan = querySnapshot.map((plan) => {
+    plan.data();
+  });
 
-  res.status(200).json(querySnapshot[0].data());
+  plan.length === 0 ? res.status(404) : res.status(200).json(plan[0]);
 }
