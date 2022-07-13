@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   );
 
   const querySnapshot = await getDocs(q);
-  const plan = querySnapshot.map((plan) => {
+  const plan = querySnapshot.docs.map((plan) => {
     plan.data();
   });
 
