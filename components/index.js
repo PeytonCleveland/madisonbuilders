@@ -5,4 +5,5 @@ export { default as Header } from "./header";
 export { default as InternalHeader } from "./internal-header";
 export { default as Layout } from "./layout";
 export { default as PlanCard } from "./plan-card";
+export { default as PlanDescription } from "./plan-description";
 export { default as Spinner } from "./spinner";
