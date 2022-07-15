@@ -128,7 +128,7 @@ const Plan = ({ plan }) => {
             <h4 className="text-gray-600 text-sm font-sans font-light">
               {index === 0 ? "Main Floor" : "Second Floor"}
             </h4>
-            <div className={`flex w-full min-h-[350px] relative`}>
+            <div className={`flex w-full min-h-[365px] relative`}>
               <Image
                 src={level}
                 alt={`Plan ${index}`}
