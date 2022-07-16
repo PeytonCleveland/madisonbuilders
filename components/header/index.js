@@ -12,6 +12,7 @@ const links = [
   { text: "About", href: "/about" },
   { text: "Process", href: "/process" },
   { text: "Work", href: "/work" },
+  { text: "Plans", href: "/plans" },
   { text: "Blog", href: "/blog" }
 ];
 
