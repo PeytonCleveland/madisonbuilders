@@ -6,6 +6,7 @@ import { Modal, PlanDescription, Toast } from "../../components";
 const Plan = ({ plan }) => {
   const [shareModal, setShareModal] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
 
   const copyLink = () => {
     navigator.clipboard.writeText(window.location.toString());
@@ -13,6 +14,16 @@ const Plan = ({ plan }) => {
     setTimeout(() => {
       setCopySuccess(false);
     }, 3000);
+  };
+
+  const scrollImage = (direction) => {
+    direction === "left"
+      ? activeImage === 0
+        ? null
+        : setActiveImage(activeImage - 1)
+      : activeImage === plan.images.length - 1
+      ? null
+      : setActiveImage(activeImage + 1);
   };
 
   return (
@@ -67,13 +78,23 @@ const Plan = ({ plan }) => {
           </div>
         </div>
         <div className="flex w-full h-40 min-h-[175px] relative">
-          <Image
-            src={plan.featuredImage}
-            alt={`Plan ${plan.planNumber}`}
-            layout="fill"
-            objectFit={"cover"}
-          />
-          <button className="absolute w-7 h-7 rounded-full bg-indigo-700 shadow-md -left-3 top-1/2 bottom-1/2 flex justify-center items-center">
+          {plan.images.map((image, index) => {
+            return (
+              <Image
+                src={image}
+                alt={`Plan ${plan.planNumber} Image ${index + 1}`}
+                layout="fill"
+                objectFit={"cover"}
+                style={{
+                  visibility: index == activeImage ? "visible" : "hidden"
+                }}
+              />
+            );
+          })}
+          <button
+            className="absolute w-7 h-7 rounded-full bg-indigo-700 shadow-md -left-3 top-1/2 bottom-1/2 flex justify-center items-center"
+            onClick={() => scrollImage("left")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 mr-0.5 text-white"
@@ -87,7 +108,10 @@ const Plan = ({ plan }) => {
               />
             </svg>
           </button>
-          <div className="absolute w-7 h-7 rounded-full bg-indigo-700 shadow-md -right-3 top-1/2 bottom-1/2 flex justify-center items-center">
+          <button
+            className="absolute w-7 h-7 rounded-full bg-indigo-700 shadow-md -right-3 top-1/2 bottom-1/2 flex justify-center items-center"
+            onClick={() => scrollImage("right")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 text-white"
@@ -100,7 +124,7 @@ const Plan = ({ plan }) => {
                 clipRule="evenodd"
               />
             </svg>
-          </div>
+          </button>
         </div>
         <h2 className="text-gray-900 text-sm font-light">{plan.planTagline}</h2>
         <div className="flex flex-col justify-center">
