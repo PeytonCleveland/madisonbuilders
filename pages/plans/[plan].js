@@ -88,6 +88,7 @@ const Plan = ({ plan }) => {
                 style={{
                   visibility: index == activeImage ? "visible" : "hidden"
                 }}
+                key={index}
               />
             );
           })}
