@@ -153,7 +153,10 @@ const Home = () => {
           className="-mt-12 rounded-lg mb-8"
           controls
           playsInline
-          src="/stock.mov#t=0.001"
+          autoPlay
+          muted
+          poster="/thumbnail.png"
+          src="https://firebasestorage.googleapis.com/v0/b/madison-builders.appspot.com/o/305%20Brownstone%20Loop.mp4?alt=media&token=d645877c-f7fb-45ab-b982-ef235bf76477#t=9.1"
         ></video>
         <h3 className="text-white text-xl mb-2">
           Discover <strong>Our Difference</strong>
