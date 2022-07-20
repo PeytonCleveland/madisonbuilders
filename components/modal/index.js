@@ -1,6 +1,6 @@
 const Modal = ({ title, children, onClose }) => {
   return (
-    <div className="flex flex-col w-screen h-screen z-[100] bg-white absolute">
+    <div className="flex flex-col w-screen h-screen z-[100] bg-white fixed overflow-hidden">
       <div className="container flex w-full justify-between items-center py-4 shadow-md">
         <h3 className="text-2xl text-gray-900 font-medium">{title}</h3>
         <button
@@ -23,7 +23,7 @@ const Modal = ({ title, children, onClose }) => {
           </svg>
         </button>
       </div>
-      <div className="container flex flex-col w-full py-4 gap-2">
+      <div className="container flex flex-col w-full py-4 gap-2 overflow-y-scroll">
         {children}
       </div>
     </div>

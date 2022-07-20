@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Modal, PlanDescription, Toast } from "../../components";
+import { Modal, PlanDescription, Toast } from "../../../components";
 
 const Plan = ({ plan }) => {
   const [shareModal, setShareModal] = useState(false);
@@ -55,7 +55,7 @@ const Plan = ({ plan }) => {
       {copySuccess && <Toast text="Plan link copied to clipboard!" />}
       <div className="container flex flex-col w-full pt-32 pb-12 gap-3">
         <div className="flex justify-between w-full items-center">
-          <h1 className="text-gray-900 text-xl font-medium">{`Plan #${plan.planNumber}`}</h1>
+          <h1 className="text-gray-900 text-xl font-medium">{`Plan ${plan.planNumber}`}</h1>
           <div className="flex gap-3 items-center">
             <button onClick={() => setShareModal(true)}>
               <svg
@@ -153,7 +153,10 @@ const Plan = ({ plan }) => {
           </div>
         </div>
         <div className="flex flex-col w-full gap-1">
-          <Link href="/" passHref>
+          <Link
+            href={`/auth/client-login?planNumber=${plan.planNumber}`}
+            passHref
+          >
             <a className="w-full text-lg mt-1 gap-2 flex justify-center items-center py-2 bg-gradient-to-br from-indigo-700 to-indigo-800 rounded-full shadow-md text-white font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +174,7 @@ const Plan = ({ plan }) => {
               Customized cost estimate
             </a>
           </Link>
-          <Link href="/" passHref>
+          <Link href={`/plans/${plan.planNumber}/purchase`} passHref>
             <a className="w-full text-lg mt-1 gap-2 flex justify-center items-center py-2 rounded-full shadow-md text-indigo-700 border-2 border-indigo-700 font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
