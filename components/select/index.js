@@ -13,7 +13,7 @@ const Select = ({
   });
 
   return (
-    <>
+    <div className="flex flex-col gap-1.5">
       <span className="text-sm text-gray-600 font-sans">{label}</span>
       <div
         className={`py-2 px-4 flex bg-gray-200 rounded-t-lg ${
@@ -24,11 +24,11 @@ const Select = ({
         onClick={() => setOpen(!open)}
       >
         {options[selected]?.props.label ?? placeholder}
-        <div className="border-l-2 border-gray-300 pl-3">
+        <div className="border-l-2 border-gray-300 pl-4">
           {open ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-7 w-7 text-gray-400"
+              className="h-6 w-6 text-gray-400"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -41,7 +41,7 @@ const Select = ({
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-7 w-7 text-gray-400"
+              className="h-6 w-6 text-gray-400"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -56,7 +56,7 @@ const Select = ({
         <div
           className={
             open
-              ? "flex flex-col w-full px-4 py-1 absolute top-[44px] left-0 bg-gray-200 rounded-b-lg border-t-2 border-gray-300 z-50"
+              ? "flex flex-col w-full px-4 py-1 absolute top-[40px] max-h-[250px] left-0 bg-gray-200 rounded-b-lg border-t-2 border-gray-300 z-50 overflow-y-scroll"
               : "hidden"
           }
         >
@@ -73,7 +73,7 @@ const Select = ({
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Modal, Option, Select } from "../../../components";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
 const Purchase = ({ plan }) => {
   const {
@@ -76,7 +77,7 @@ const Purchase = ({ plan }) => {
           </ul>
         </Modal>
       )}
-      <div className="container w-full pt-32 pb-20 flex flex-col gap-2">
+      <div className="container w-full pt-32 pb-8 flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <h1 className="text-lg text-gray-900 font-medium">{`Purchase ${plan.planNumber}`}</h1>
           <button
@@ -106,26 +107,127 @@ const Purchase = ({ plan }) => {
             objectFit={"cover"}
           />
         </div>
+        <h2 className="text-gray-900 text-sm font-light">{plan.planTagline}</h2>
+        <div className="flex flex-col justify-center">
+          <div className="grid grid-cols-5 gap-2">
+            <div className="flex flex-col justify-center">
+              <h3 className="text-xs text-gray-900 font-sans">{plan.sqFeet}</h3>
+              <h4 className="text-xs text-gray-500">Sq Ft</h4>
+            </div>
+            <div className="flex flex-col justify-center">
+              <h3 className="text-xs text-gray-900 font-sans">{plan.beds}</h3>
+              <h4 className="text-xs text-gray-500">Beds</h4>
+            </div>
+            <div className="flex flex-col justify-center">
+              <h3 className="text-xs text-gray-900 font-sans">{plan.baths}</h3>
+              <h4 className="text-xs text-gray-500">Baths</h4>
+            </div>
+            <div className="flex flex-col justify-center">
+              <h3 className="text-xs text-gray-900 font-sans">{plan.width}</h3>
+              <h4 className="text-xs text-gray-500">Width</h4>
+            </div>
+            <div className="flex flex-col justify-center">
+              <h3 className="text-xs text-gray-900 font-sans">{plan.depth}</h3>
+              <h4 className="text-xs text-gray-500">Depth</h4>
+            </div>
+          </div>
+        </div>
+        <hr className="mt-2" />
         <form
           onSubmit={handleSubmit(onSubmitForm)}
-          className="w-full flex flex-col gap-2"
+          className="w-full flex flex-col gap-5 py-2"
         >
-          <h2 className="text-gray-900">Purchase options</h2>
-          <Select label="Hello">
-            <Option value="World" label="World option">
-              <h6>World child</h6>
-              <p className="text-gray-600 text-xs font-sans">
-                Hello world wtf is up
+          <Select label="Plan set options">
+            <Option value="pdfSingle" label="PDF – Single Use">
+              <h6>PDF – Single Use</h6>
+              <p className="text-gray-600 text-xs font-sans mt-1">
+                A PDF file with a license to build and a copyright release
+                giving you legal permission to make changes to the plan and make
+                copies to build the house. Delivered digitally, typically within
+                1 to 2 days. Comes with a Single-Build License giving you
+                permission to build the home one time.
               </p>
             </Option>
-            <Option value="World" label="From the other side">
-              From the other side child
+            <Option value="fiveSets" label="5 Sets">
+              <h6>5 Sets</h6>
+              <p className="text-gray-600 text-xs font-sans mt-1">
+                Five full sets of copyrighted plans that are mailed to you. This
+                is the minimum package you can build from.
+              </p>
             </Option>
-            <Option value="Hello" label="Hello">
-              Hello child
+            <Option value="fiveSetsPdf" label="5 Sets + PDF">
+              <h6>5 Sets + PDF</h6>
+              <p className="text-gray-600 text-xs font-sans mt-1">
+                Five printed set and a digital PDF set of construction documents
+                with a copyright release and a single license to build.
+              </p>
+            </Option>
+            <Option value="fiveSetsPdf" label="PDF – Unlimited Builds">
+              <h6>PDF – Unlimited Builds</h6>
+              <p className="text-gray-600 text-xs font-sans mt-1">
+                Five printed set and a digital PDF set of construction documents
+                with a copyright release and a single license to build.
+              </p>
             </Option>
           </Select>
+          <Select label="Foundation options">
+            <Option value="pdfSingle" label="Slab – No charge">
+              <h6>Slab – No charge</h6>
+            </Option>
+            <Option value="pdfSingle" label="Basement +$395">
+              <h6>Basement +$395</h6>
+            </Option>
+            <Option value="pdfSingle" label="Crawlspace +$150">
+              <h6>Crawlspace +$150</h6>
+            </Option>
+          </Select>
+          <div className="flex gap-2 pt-1">
+            <h2 className="text-lg font-semibold">Total:</h2>
+            <h3 className="text-lg font-sans">$1,295.00 (Tax included)</h3>
+          </div>
+          <button className="w-full text-xl mt-1 gap-2 flex justify-center items-center py-[10px] bg-gradient-to-br from-indigo-700 to-indigo-800 rounded-full shadow-md text-white font-semibold">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+            </svg>
+            Purchase this plan
+          </button>
         </form>
+        <hr className="mt-4 mb-6" />
+        <div className="flex flex-col gap-1 w-full bg-indigo-100 rounded-lg shadow-md p-4 pb-5">
+          <h3 className="text-xl font-semibold text-gray-900">
+            Modify this plan
+          </h3>
+          <p className="text-gray-700 font-sans">
+            Need to make changes? We will get you a free price quote within 2 to
+            4 business days.
+          </p>
+          <Link
+            href={`https://www.architecturaldesigns.com/services/modification-request?plan_id=${plan.externalId}`}
+            passHref
+          >
+            <a className="w-full mt-2 gap-2 flex justify-center items-center py-2 rounded-full shadow-md text-indigo-700 border-2 border-indigo-700 font-semibold">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                <path
+                  fillRule="evenodd"
+                  d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Modify this plan
+            </a>
+          </Link>
+        </div>
       </div>
     </>
   );
