@@ -65,6 +65,7 @@ const Select = ({
               <div
                 onClick={() => setSelected(index)}
                 className="py-2 text-gray-900"
+                key={index}
               >
                 {child.props.children}
               </div>

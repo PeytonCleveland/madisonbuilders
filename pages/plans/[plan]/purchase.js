@@ -83,7 +83,7 @@ const Purchase = ({ plan }) => {
             className="text-sm text-indigo-700 font-sans font-light flex gap-1 items-center"
             onClick={() => setIncludedModal(true)}
           >
-            What's included{" "}
+            What&apos;s included{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
