@@ -155,9 +155,9 @@ const Home = () => {
           className="w-full h-[201px] -mt-16 mb-6 rounded-lg"
           src="https://www.youtube.com/embed/2s0zEChGQKM?autoplay=1&mute=1&enablejsapi=1"
           title="Brownstone Home"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
         <h3 className="text-white text-xl mb-2">
           Discover <strong>Our Difference</strong>
