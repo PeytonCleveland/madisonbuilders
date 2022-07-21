@@ -148,170 +148,176 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-screen container bg-gradient-to-br from-indigo-700 to-indigo-800 flex flex-col justify-center">
-        <iframe
-          width="560"
-          height="315"
-          className="w-full h-[201px] -mt-16 mb-6 rounded-lg"
-          src="https://www.youtube.com/embed/2s0zEChGQKM?autoplay=1&mute=1&enablejsapi=1"
-          title="Brownstone Home"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-        <h3 className="text-white text-xl mb-2">
-          Discover <strong>Our Difference</strong>
-        </h3>
-        <p className="text-gray-200 font-light font-sans text-sm mb-6 pr-4">
-          Madison Builders is a custom home builder that is dedicated to
-          utilizing the finest materials and best practices that building
-          science has to offer. We pride ourselves on building beautiful,
-          high-performing homes that will last for generations to come.
-        </p>
-        <button className="w-fit bg-white text-indigo-900 px-5 py-[5px] font-semibold text-lg rounded-full mb-10 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
-          Learn more
-        </button>
+      <div className="w-screen bg-gradient-to-br from-indigo-700 to-indigo-800">
+        <div className="container flex flex-col justify-center">
+          <iframe
+            width="560"
+            height="315"
+            className="w-full h-[201px] -mt-16 mb-6 rounded-lg"
+            src="https://www.youtube.com/embed/2s0zEChGQKM?autoplay=1&mute=1&enablejsapi=1"
+            title="Brownstone Home"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <h3 className="text-white text-xl mb-2">
+            Discover <strong>Our Difference</strong>
+          </h3>
+          <p className="text-gray-200 font-light font-sans text-sm mb-6 pr-4">
+            Madison Builders is a custom home builder that is dedicated to
+            utilizing the finest materials and best practices that building
+            science has to offer. We pride ourselves on building beautiful,
+            high-performing homes that will last for generations to come.
+          </p>
+          <button className="w-fit bg-white text-indigo-900 px-5 py-[5px] font-semibold text-lg rounded-full mb-10 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
+            Learn more
+          </button>
+        </div>
       </div>
 
-      <div className="w-screen container bg-gradient-to-br from-indigo-100 to-indigo-200 flex flex-col py-10">
-        <h3 className="text-indigo-900 text-xl mb-2">
-          Our <strong>Process</strong>
-        </h3>
-        <p className="text-gray-800 font-light font-sans text-sm mb-6 pr-8">
-          Discover how Madison Builders turns your dream home into a reality.
-        </p>
-        <div className="flex items-center">
-          <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
-            <h4 className="text-xl text-indigo-900">01</h4>
-          </div>
-          <h3 className="text-xl text-indigo-900">
-            Determine your <strong>budget</strong>
+      <div className="w-screen bg-gradient-to-br from-indigo-100 to-indigo-200 py-10">
+        <div className="container flex flex-col">
+          <h3 className="text-indigo-900 text-xl mb-2">
+            Our <strong>Process</strong>
           </h3>
-        </div>
-        <p className="text-gray-800 font-light pr-6 font-sans text-sm mt-2 ml-[54px] mb-8">
-          Determine the budget for your custom build. If you do not yet have a
-          lot, be sure to consider the cost of land when determining your
-          budget. Use our{" "}
-          <a
-            className="text-indigo-600 font-semibold text-sm"
-            href="#calculator"
-          >
-            mortgage calculator
-          </a>{" "}
-          below to estimate your monthly payment.
-        </p>
-        <div className="flex items-center">
-          <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
-            <h4 className="text-xl text-indigo-900">02</h4>
+          <p className="text-gray-800 font-light font-sans text-sm mb-6 pr-8">
+            Discover how Madison Builders turns your dream home into a reality.
+          </p>
+          <div className="flex items-center">
+            <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
+              <h4 className="text-xl text-indigo-900">01</h4>
+            </div>
+            <h3 className="text-xl text-indigo-900">
+              Determine your <strong>budget</strong>
+            </h3>
           </div>
-          <h3 className="text-xl text-indigo-900">
-            Select your <strong>land</strong>
-          </h3>
-        </div>
-        <p className="text-gray-800 font-light font-sans text-sm mt-2 ml-[54px] mb-8">
-          If you have a lot that you intend to build on, we&apos;ll need the lot
-          information. If you need a lot, reach out to our realtor friends
-          at&nbsp;
-          <a
-            className="text-indigo-600 font-semibold text-sm"
-            href="https://myriverrockrealty.com/staff/meagan-thrash-2/"
-          >
-            Exit River Rock Realty.
-          </a>
-        </p>
-        <div className="flex items-center">
-          <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
-            <h4 className="text-xl text-indigo-900">03</h4>
-          </div>
-          <h3 className="text-xl text-indigo-900">
-            Choose your <strong>houseplan</strong>
-          </h3>
-        </div>
-        <p className="text-gray-800 font-light font-sans pr-4 text-sm mt-2 ml-[54px] mb-8">
-          We are an{" "}
-          <a
-            className="text-indigo-600 font-semibold text-sm"
-            href="https://www.architecturaldesigns.com/"
-          >
-            Architectural Designs
-          </a>{" "}
-          builder partner, giving us access to over 30k houseplans for you to
-          choose from. Browse our selection to find your dream plan, or bring
-          your own!
-        </p>
-        <div className="flex items-center">
-          <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
-            <h4 className="text-xl text-indigo-900">04</h4>
-          </div>
-          <h3 className="text-xl text-indigo-900">
-            Select your <strong>finishes</strong>
-          </h3>
-        </div>
-        <p className="text-gray-800 font-light pr-4 font-sans text-sm mt-2 ml-[54px] mb-8">
-          Utilize our client portal to choose the finishes for your home.
-          We&apos;ll use the details you provide to create a customized estimate
-          to build your home.
-        </p>
-        <div className="flex items-center">
-          <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
-            <h4 className="text-xl text-indigo-900">05</h4>
-          </div>
-          <h3 className="text-xl text-indigo-900">
-            Start your <strong>build</strong>
-          </h3>
-        </div>
-        <p className="text-gray-800 font-light pr-6 font-sans text-sm mt-2 ml-[54px] mb-8">
-          When you are ready to build, use our client portal to schedule a date
-          to sign your new construction contract. After that, we&apos;ll get
-          started and bring your dream home to life!
-        </p>
-      </div>
-
-      <div className="w-screen container bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col pt-8">
-        <h3 className="text-white text-xl mb-2">
-          Unmatched <strong>Transparency</strong>
-        </h3>
-        <p className="text-gray-200 font-light font-sans text-sm mb-4 pr-8">
-          Madison Builders&apos; client portal allows unparalleled transparency
-          into the homebuilding process.
-        </p>
-        <Link href="/client-portal" passHref>
-          <a className="mb-4 text-teal-300 flex items-center text-sm font-sans">
-            Explore client portal
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+          <p className="text-gray-800 font-light pr-6 font-sans text-sm mt-2 ml-[54px] mb-8">
+            Determine the budget for your custom build. If you do not yet have a
+            lot, be sure to consider the cost of land when determining your
+            budget. Use our{" "}
+            <a
+              className="text-indigo-600 font-semibold text-sm"
+              href="#calculator"
             >
-              <path
-                fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </Link>
-        <h3 className="text-white mb-3">
-          Choose finishes <strong>for your home</strong>
-        </h3>
-        <div className="w-full h-52 mb-8 flex relative">
-          <Image
-            src="/finishes.png"
-            alt="finishes"
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-          />
+              mortgage calculator
+            </a>{" "}
+            below to estimate your monthly payment.
+          </p>
+          <div className="flex items-center">
+            <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
+              <h4 className="text-xl text-indigo-900">02</h4>
+            </div>
+            <h3 className="text-xl text-indigo-900">
+              Select your <strong>land</strong>
+            </h3>
+          </div>
+          <p className="text-gray-800 font-light font-sans text-sm mt-2 ml-[54px] mb-8">
+            If you have a lot that you intend to build on, we&apos;ll need the
+            lot information. If you need a lot, reach out to our realtor friends
+            at&nbsp;
+            <a
+              className="text-indigo-600 font-semibold text-sm"
+              href="https://myriverrockrealty.com/staff/meagan-thrash-2/"
+            >
+              Exit River Rock Realty.
+            </a>
+          </p>
+          <div className="flex items-center">
+            <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
+              <h4 className="text-xl text-indigo-900">03</h4>
+            </div>
+            <h3 className="text-xl text-indigo-900">
+              Choose your <strong>houseplan</strong>
+            </h3>
+          </div>
+          <p className="text-gray-800 font-light font-sans pr-4 text-sm mt-2 ml-[54px] mb-8">
+            We are an{" "}
+            <a
+              className="text-indigo-600 font-semibold text-sm"
+              href="https://www.architecturaldesigns.com/"
+            >
+              Architectural Designs
+            </a>{" "}
+            builder partner, giving us access to over 30k houseplans for you to
+            choose from. Browse our selection to find your dream plan, or bring
+            your own!
+          </p>
+          <div className="flex items-center">
+            <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
+              <h4 className="text-xl text-indigo-900">04</h4>
+            </div>
+            <h3 className="text-xl text-indigo-900">
+              Select your <strong>finishes</strong>
+            </h3>
+          </div>
+          <p className="text-gray-800 font-light pr-4 font-sans text-sm mt-2 ml-[54px] mb-8">
+            Utilize our client portal to choose the finishes for your home.
+            We&apos;ll use the details you provide to create a customized
+            estimate to build your home.
+          </p>
+          <div className="flex items-center">
+            <div className="w-9 h-9 bg-indigo-300 rounded shadow flex justify-center items-center mr-4">
+              <h4 className="text-xl text-indigo-900">05</h4>
+            </div>
+            <h3 className="text-xl text-indigo-900">
+              Start your <strong>build</strong>
+            </h3>
+          </div>
+          <p className="text-gray-800 font-light pr-6 font-sans text-sm mt-2 ml-[54px] mb-8">
+            When you are ready to build, use our client portal to schedule a
+            date to sign your new construction contract. After that, we&apos;ll
+            get started and bring your dream home to life!
+          </p>
         </div>
-        <h3 className="text-white mb-3">
-          Make change orders <strong>in minutes</strong>
-        </h3>
-        <div className="w-full h-52 bg-gray-600 mb-8"></div>
-        <h3 className="text-white mb-3">
-          Easily track <strong>updates and expenses</strong>
-        </h3>
-        <div className="w-full h-52 bg-gray-600 -mb-10"></div>
+      </div>
+
+      <div className="w-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-8">
+        <div className="container flex flex-col">
+          <h3 className="text-white text-xl mb-2">
+            Unmatched <strong>Transparency</strong>
+          </h3>
+          <p className="text-gray-200 font-light font-sans text-sm mb-4 pr-8">
+            Madison Builders&apos; client portal allows unparalleled
+            transparency into the homebuilding process.
+          </p>
+          <Link href="/client-portal" passHref>
+            <a className="mb-4 text-teal-300 flex items-center text-sm font-sans">
+              Explore client portal
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+          </Link>
+          <h3 className="text-white mb-3">
+            Choose finishes <strong>for your home</strong>
+          </h3>
+          <div className="w-full h-52 mb-8 flex relative">
+            <Image
+              src="/finishes.png"
+              alt="finishes"
+              layout="fill"
+              objectFit="cover"
+              priority={true}
+            />
+          </div>
+          <h3 className="text-white mb-3">
+            Make change orders <strong>in minutes</strong>
+          </h3>
+          <div className="w-full h-52 bg-gray-600 mb-8"></div>
+          <h3 className="text-white mb-3">
+            Easily track <strong>updates and expenses</strong>
+          </h3>
+          <div className="w-full h-52 bg-gray-600 -mb-10"></div>
+        </div>
       </div>
 
       <div className="container pt-20 pb-10" id="calculator">
@@ -455,40 +461,42 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-br from-indigo-700 to-indigo-800 w-full container pt-12 pb-14">
-        <h3 className="text-white text-xl mb-4">
-          Explore Our <strong>Blog</strong>
-        </h3>
-        <div className="snap-x mx-auto snap-mandatory flex w-full overflow-scroll">
-          {blogPosts.map((post, index) => (
-            <div
-              key={index}
-              className="snap-start bg-indigo-200 w-3/4 flex-shrink-0 h-[330px] mr-6 flex flex-col items-center justify-between shadow-md rounded-lg overflow-hidden"
-            >
-              <div className="flex w-full h-40 min-h-[160px] relative">
-                <Image src={post.image} layout="fill" />
-              </div>
-              <div className="flex flex-col w-full h-full p-5 justify-between">
-                <div className="flex flex-col">
-                  <h4 className="text-base">{post.title}</h4>
-                  <p className="text-xs text-gray-700 font-sans">
-                    {timeSince(post.date)}
-                  </p>
+      {false && (
+        <div className="bg-gradient-to-br from-indigo-700 to-indigo-800 w-full container pt-12 pb-14">
+          <h3 className="text-white text-xl mb-4">
+            Explore Our <strong>Blog</strong>
+          </h3>
+          <div className="snap-x mx-auto snap-mandatory flex w-full overflow-scroll">
+            {blogPosts.map((post, index) => (
+              <div
+                key={index}
+                className="snap-start bg-indigo-200 w-3/4 flex-shrink-0 h-[330px] mr-6 flex flex-col items-center justify-between shadow-md rounded-lg overflow-hidden"
+              >
+                <div className="flex w-full h-40 min-h-[160px] relative">
+                  <Image src={post.image} layout="fill" />
                 </div>
-                <div className="flex items-center">
-                  <p className="text-sm text-indigo-900 font-semibold mr-2">
-                    Tags:
-                  </p>
-                  <p className="px-2 py-0.5 bg-indigo-600 text-white text-xs rounded-md flex items-center mr-1">
-                    Smart Home
-                  </p>
-                  <p className="text-xs font-sans">+3 More</p>
+                <div className="flex flex-col w-full h-full p-5 justify-between">
+                  <div className="flex flex-col">
+                    <h4 className="text-base">{post.title}</h4>
+                    <p className="text-xs text-gray-700 font-sans">
+                      {timeSince(post.date)}
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <p className="text-sm text-indigo-900 font-semibold mr-2">
+                      Tags:
+                    </p>
+                    <p className="px-2 py-0.5 bg-indigo-600 text-white text-xs rounded-md flex items-center mr-1">
+                      Smart Home
+                    </p>
+                    <p className="text-xs font-sans">+3 More</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
