@@ -2,12 +2,16 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <div className="w-full h-8 bg-gradient-to-br from-indigo-700 to-indigo-800 flex justify-center items-center z-50 fixed">
-      <p className="text-xs text-white font-light font-sans">
-        July free plan special happening now!&nbsp;&nbsp;
+    <div className="w-full h-8 lg:h-[34px] bg-gradient-to-br from-indigo-700 to-indigo-800 flex justify-center items-center z-50 fixed">
+      <p className="text-xs lg:text-sm text-white font-light font-sans flex">
+        Summer free plan special happening now!&nbsp;&nbsp;
+        <span className="hidden lg:block">
+          Get your dream house plan for free when you start a custom build!
+        </span>
+        &nbsp;&nbsp;
       </p>
       <Link href="/promos/july-free-plan-special" passHref>
-        <a className="text-xs text-teal-300 font-sans flex items-center">
+        <a className="text-xs lg:text-sm text-teal-300 font-sans flex items-center">
           <strong>Learn more</strong>{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"

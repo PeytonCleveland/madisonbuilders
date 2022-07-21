@@ -4,27 +4,36 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-800 to-gray-900 -mt-1">
-      <div className="container flex flex-col py-8 justify-between">
+      <div className="container flex flex-col py-8 lg:pt-10 lg:pb-4 justify-between">
         <div className="flex w-full">
-          <div className="flex flex-1 flex-col">
-            <div>
+          <div className="flex flex-1 flex-col gap-2">
+            <div className="block lg:hidden">
               <Image
                 src="/madison-builders-dark.png"
                 width={145}
-                height={32}
+                height={34}
+                alt="Madison Builders"
+                lazyBoundary="450px"
+              />
+            </div>
+            <div className="hidden lg:block">
+              <Image
+                src="/madison-builders-dark.png"
+                width={222}
+                height={50}
                 alt="Madison Builders"
                 lazyBoundary="450px"
               />
             </div>
             <Link href="mailto:peyton@madisonbuilders.llc" passHref>
-              <a className="text-xs text-white mt-2 mb-0.5">
+              <a className="text-xs lg:text-base text-white">
                 contact@madisonbuilders.llc
               </a>
             </Link>
             <Link href="tel:3347885522" passHref>
-              <a className="text-xs text-white">334.788.5522</a>
+              <a className="text-xs lg:text-base text-white">334.788.5522</a>
             </Link>
-            <p className="text-white text-sm font-sans mt-3 mb-2 font-semibold">
+            <p className="text-white text-sm font-sans mb-2 font-semibold">
               Follow us!
             </p>
             <div className="flex items-center gap-4">
@@ -62,14 +71,14 @@ const Footer = () => {
                 </a>
               </Link>
             </div>
-            <p className="text-white text-sm font-sans mt-3 font-light">
+            <p className="text-white text-sm lg:text-base font-sans mt-3 lg:mt-4 font-light">
               License #26995
             </p>
             <Link
               href="https://alhobprod.glsuite.us/GLSuiteWeb/Clients/ALHOB/Public/LicenseeDetails.aspx?EntityID=1233330"
               passHref
             >
-              <a className="mb-4 text-teal-300 flex items-center text-sm font-sans mt-0.5">
+              <a className="mb-4 text-teal-300 flex items-center text-sm lg:text-base font-sans">
                 Click to verify
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -86,28 +95,42 @@ const Footer = () => {
               </a>
             </Link>
           </div>
-          <div className="flex flex-1 flex-col pl-12">
-            <h4 className="text-teal-300">Quick Links</h4>
+          <div className="flex flex-1 flex-col pl-12 lg:pl-0">
+            <h4 className="text-teal-300 lg:text-xl">Quick Links</h4>
             <Link href="/" passHref>
-              <a className="text-white text-sm font-sans my-1">Home</a>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Home
+              </a>
             </Link>
             <Link href="/about" passHref>
-              <a className="text-white text-sm font-sans my-1">About</a>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                About
+              </a>
             </Link>
             <Link href="/process" passHref>
-              <a className="text-white text-sm font-sans my-1">Process</a>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Process
+              </a>
             </Link>
             <Link href="/work" passHref>
-              <a className="text-white text-sm font-sans my-1">Work</a>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Work
+              </a>
             </Link>
             <Link href="/blog" passHref>
-              <a className="text-white text-sm font-sans my-1">Blog</a>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Blog
+              </a>
             </Link>
             <Link href="/contact" passHref>
-              <a className="text-white text-sm font-sans my-1">Contact</a>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Contact
+              </a>
             </Link>
             <Link href="/client-portal" passHref>
-              <a className="text-white text-sm font-sans my-1">Client Portal</a>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Client Portal
+              </a>
             </Link>
           </div>
         </div>

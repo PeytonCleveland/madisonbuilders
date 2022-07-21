@@ -38,7 +38,7 @@ const Header = () => {
 
   const headerStyle = promoPage
     ? "w-screen h-[70px] fixed bg-white z-40 top-0 flex items-center"
-    : "w-screen h-[70px] fixed bg-white z-40 top-8 flex items-center";
+    : "w-screen h-[70px] fixed bg-white z-40 top-8 lg:top-[34px] flex items-center";
 
   return (
     <>

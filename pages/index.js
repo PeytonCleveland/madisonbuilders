@@ -116,60 +116,65 @@ const Home = () => {
                   `
         }}
       />
-      <div className="container h-[500px] flex flex-col justify-end bg-white">
-        <h1 className="text-indigo-800 text-3xl mb-2">
-          Alabama&apos;s Premier <strong>Custom Home Builder</strong>
-        </h1>
-        <h2 className="text-gray-700 font-sans font-light text-sm">
-          We specialize in constructing the most high performing, energy
-          efficient custom homes in Alabama
-        </h2>
-        <div className="flex mt-6 mb-32">
-          <button className="flex flex-1 mr-2 justify-center items-center border-2 border-indigo-700 text-indigo-700 px-5 py-[5px] font-semibold text-lg rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
-            Our Process
-          </button>
-          <Link href="/contact" passHref>
-            <a className="flex flex-1 ml-2 justify-center items-center bg-gradient-to-br from-indigo-700 to-indigo-800 text-white px-5 py-[5px] font-semibold text-lg rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
-              Let&apos;s Talk{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-1"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
-          </Link>
+      <div className="container pt-[200px] bg-white">
+        <div className="flex flex-col justify-end md:w-1/2 h-full md:items-start">
+          <h1 className="text-indigo-800 text-3xl md:text-5xl mb-2">
+            Alabama&apos;s Premier <br />
+            <strong>Custom Home Builder</strong>
+          </h1>
+          <h2 className="text-gray-700 font-sans font-light text-sm md:text-lg md:pr-12">
+            We specialize in constructing the most high performing, energy
+            efficient custom homes in Alabama
+          </h2>
+          <div className="flex mt-6 mb-32 md:mb-24">
+            <Link href="/process" passHref>
+              <a className="flex flex-1 mr-2 whitespace-nowrap justify-center items-center border-2 border-indigo-700 text-indigo-700 px-5 md:px-6 py-[5px] font-semibold text-lg md:text-xl rounded-full hover:bg-indigo-100 hover:scale-105 duration-150 shadow-md">
+                Our Process
+              </a>
+            </Link>
+            <Link href="/contact" passHref>
+              <a className="flex flex-1 ml-2 whitespace-nowrap justify-center items-center bg-gradient-to-br from-indigo-700 to-indigo-800 text-white px-5 md:px-6 py-[5px] font-semibold text-lg md:text-xl  rounded-full hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
+                Let&apos;s Talk{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-1"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
 
-      <div className="w-screen bg-gradient-to-br from-indigo-700 to-indigo-800">
+      <div className="w-screen bg-gradient-to-br from-indigo-700 to-indigo-800 lg:pb-12">
         <div className="container flex flex-col justify-center">
           <iframe
             width="560"
             height="315"
-            className="w-full h-[201px] -mt-16 mb-6 rounded-lg"
+            className="w-full h-[201px] -mt-16 mb-6 rounded-lg md:w-1/2 md:self-end md:h-[378px] md:-mt-[320px]"
             src="https://www.youtube.com/embed/2s0zEChGQKM?autoplay=1&mute=1&enablejsapi=1"
             title="Brownstone Home"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <h3 className="text-white text-xl mb-2">
+          <h3 className="text-white text-xl md:text-3xl mb-2 md:w-1/2">
             Discover <strong>Our Difference</strong>
           </h3>
-          <p className="text-gray-200 font-light font-sans text-sm mb-6 pr-4">
+          <p className="text-gray-200 font-light font-sans text-sm md:text-base mb-6 lg:pr-24 md:w-1/2">
             Madison Builders is a custom home builder that is dedicated to
             utilizing the finest materials and best practices that building
             science has to offer. We pride ourselves on building beautiful,
             high-performing homes that will last for generations to come.
           </p>
-          <button className="w-fit bg-white text-indigo-900 px-5 py-[5px] font-semibold text-lg rounded-full mb-10 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
+          <button className="w-fit bg-white text-indigo-900 px-5 md:px-6 py-[5px] font-semibold text-lg md:text-xl rounded-full mb-10 hover:bg-indigo-800 hover:scale-105 duration-150 shadow-md">
             Learn more
           </button>
         </div>
@@ -271,7 +276,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-8">
+      <div className="w-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-8 lg:py-12">
         <div className="container flex flex-col">
           <h3 className="text-white text-xl mb-2">
             Unmatched <strong>Transparency</strong>
@@ -297,26 +302,34 @@ const Home = () => {
               </svg>
             </a>
           </Link>
-          <h3 className="text-white mb-3">
-            Choose finishes <strong>for your home</strong>
-          </h3>
-          <div className="w-full h-52 mb-8 flex relative">
-            <Image
-              src="/finishes.png"
-              alt="finishes"
-              layout="fill"
-              objectFit="cover"
-              priority={true}
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8 mt-2">
+            <div className="flex flex-col gap-2">
+              <h3 className="text-white mb-3">
+                Choose finishes <strong>for your home</strong>
+              </h3>
+              <div className="w-full h-52 mb-8 flex relative">
+                <Image
+                  src="/finishes.png"
+                  alt="finishes"
+                  layout="fill"
+                  objectFit="cover"
+                  priority={true}
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-white mb-3">
+                Make change orders <strong>in minutes</strong>
+              </h3>
+              <div className="w-full h-52 bg-gray-600 mb-8"></div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-white mb-3">
+                Easily track <strong>updates and expenses</strong>
+              </h3>
+              <div className="w-full h-52 bg-gray-600 -mb-10"></div>
+            </div>
           </div>
-          <h3 className="text-white mb-3">
-            Make change orders <strong>in minutes</strong>
-          </h3>
-          <div className="w-full h-52 bg-gray-600 mb-8"></div>
-          <h3 className="text-white mb-3">
-            Easily track <strong>updates and expenses</strong>
-          </h3>
-          <div className="w-full h-52 bg-gray-600 -mb-10"></div>
         </div>
       </div>
 
