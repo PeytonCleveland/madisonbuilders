@@ -10,7 +10,7 @@ const Footer = () => {
             <Image
               src="/madison-builders-dark.png"
               width={145}
-              height={35}
+              height={32}
               alt="Madison Builders"
               lazyBoundary="450px"
             />

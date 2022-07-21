@@ -149,15 +149,16 @@ const Home = () => {
       </div>
 
       <div className="w-screen container bg-gradient-to-br from-indigo-700 to-indigo-800 flex flex-col justify-center">
-        <video
-          className="-mt-12 rounded-lg mb-8"
-          controls
-          playsInline
-          autoPlay
-          muted
-          poster="/thumbnail.png"
-          src="https://firebasestorage.googleapis.com/v0/b/madison-builders.appspot.com/o/305%20Brownstone%20Loop.mp4?alt=media&token=d645877c-f7fb-45ab-b982-ef235bf76477#t=9.1"
-        ></video>
+        <iframe
+          width="560"
+          height="315"
+          className="w-full h-[201px] -mt-16 mb-6 rounded-lg"
+          src="https://www.youtube.com/embed/2s0zEChGQKM?autoplay=1&mute=1&enablejsapi=1"
+          title="Brownstone Home"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
         <h3 className="text-white text-xl mb-2">
           Discover <strong>Our Difference</strong>
         </h3>
