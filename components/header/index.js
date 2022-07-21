@@ -66,9 +66,11 @@ const Header = () => {
           </div>
           <div className="hidden md:flex items-center">
             <HeaderLink text="Sign In" href="/sign-in" active />
-            <button className="bg-indigo-900 text-white px-5 py-[5px] font-semibold text-lg rounded ml-12 hover:bg-indigo-800 hover:scale-105 duration-150">
-              Let&apos;s Talk
-            </button>
+            <Link href="/contact" passHref>
+              <a className="bg-gradient-to-br from-indigo-700 to-indigo-800 text-white px-6 py-[5px] font-semibold text-lg rounded-full ml-12 hover:bg-indigo-800 hover:scale-105 duration-150">
+                Let&apos;s Talk
+              </a>
+            </Link>
           </div>
           <button
             className="flex items-center text-indigo-900 border border-gray-300 rounded px-[1px] active:border-indigo-900 active:bg-indigo-100  md:hidden transition-all duration-500 ease-in-out"
