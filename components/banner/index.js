@@ -10,7 +10,7 @@ const Banner = () => {
         </span>
         &nbsp;&nbsp;
       </p>
-      <Link href="/promos/july-free-plan-special" passHref>
+      <Link href="/promos/summer-free-plan-special" passHref>
         <a className="text-xs lg:text-sm text-teal-300 font-sans flex items-center">
           <strong>Learn more</strong>{" "}
           <svg

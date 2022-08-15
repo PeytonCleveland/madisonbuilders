@@ -19,8 +19,8 @@ const Footer = () => {
             <div className="hidden lg:block">
               <Image
                 src="/madison-builders-dark.png"
-                width={222}
-                height={50}
+                width={205}
+                height={47}
                 alt="Madison Builders"
                 lazyBoundary="450px"
               />
@@ -95,8 +95,8 @@ const Footer = () => {
               </a>
             </Link>
           </div>
-          <div className="flex flex-1 flex-col pl-12 lg:pl-0">
-            <h4 className="text-teal-300 lg:text-xl">Quick Links</h4>
+          <div className="flex flex-1 flex-col pl-12 lg:pl-0 lg:hidden">
+            <h4 className="text-teal-300">Quick Links</h4>
             <Link href="/" passHref>
               <a className="text-white text-sm lg:text-base font-sans my-1">
                 Home
@@ -133,9 +133,70 @@ const Footer = () => {
               </a>
             </Link>
           </div>
+          <div className="lg:flex flex-1 flex-col pl-12 lg:pl-28 hidden">
+            <h4 className="text-teal-300">Company</h4>
+            <Link href="/" passHref>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Home
+              </a>
+            </Link>
+            <Link href="/about" passHref>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                About
+              </a>
+            </Link>
+            <Link href="/process" passHref>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Process
+              </a>
+            </Link>
+            <Link href="/work" passHref>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Work
+              </a>
+            </Link>
+            <Link href="/plans" passHref>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Plans
+              </a>
+            </Link>
+          </div>
+          <div className="lg:flex flex-1 flex-col lg:pl-0 hidden">
+            <h4 className="text-teal-300">Resources</h4>
+            <Link href="/blog" passHref>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Blog
+              </a>
+            </Link>
+            <Link href="/contact" passHref>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                Contact
+              </a>
+            </Link>
+            <Link href="/faq" passHref>
+              <a className="text-white text-sm lg:text-base font-sans my-1">
+                FAQs
+              </a>
+            </Link>
+          </div>
+          <div className="lg:flex w-[375px] h-[200px] flex-col bg-gradient-to-br from-indigo-100 to-indigo-200 hidden rounded-md py-4 px-6">
+            <h5 className="text-xl text-gray-900">Join Our Newsletter!</h5>
+            <p className="text-sm text-gray-600 font-sans font-light">
+              Sign up to get notified when Madison Builders adds new plans,
+              promotions, and more!
+            </p>
+            <input
+              type="text"
+              className="w-full border text-sm rounded-md px-4 py-2 mt-2"
+              placeholder="Enter your email address"
+            />
+            <button className="w-full bg-gray-900 text-white text-sm rounded-md px-4 py-2 mt-2">
+              Subscribe
+            </button>
+          </div>
         </div>
         <div>
-          <div className="mt-12 mb-5 flex justify-center gap-6">
+          <div className="mt-12 lg:mt-2 mb-5 flex justify-center gap-6 lg:gap-10">
             <Image
               src="/2-10.png"
               width={47}
@@ -152,7 +213,7 @@ const Footer = () => {
               lazyBoundary="450px"
             />
           </div>
-          <h5 className="text-center text-indigo-200 text-xs">
+          <h5 className="text-center text-indigo-200 text-xs lg:sm">
             Copyright Madison Builders, LLC <br />
             &copy; {new Date().getFullYear()}
           </h5>

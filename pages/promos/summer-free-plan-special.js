@@ -8,10 +8,10 @@ const JulyPromo = ({ plans }) => {
     <>
       <Head>
         <title>Madison Builders - Free Plan July</title>
-        <meta name="title" content="Madison Builders - Free Plan July" />
+        <meta name="title" content="Madison Builders - Free Plan Special" />
         <meta
           name="description"
-          content="For the entire month of July when you start a custom home build with Madison Builders we'll give you the plan of your dreams 100% free.  Choose from over 50k+ house plans and let us make your dream home a reality."
+          content="Until the end of Summer when you start a custom home build with Madison Builders we'll give you the plan of your dreams 100% free.  Choose from over 50k+ house plans and let us make your dream home a reality."
         />
 
         <meta property="og:type" content="website" />
@@ -22,7 +22,7 @@ const JulyPromo = ({ plans }) => {
         <meta property="og:title" content="Madison Builders - Free Plan July" />
         <meta
           property="og:description"
-          content="For the entire month of July when you start a custom home build with Madison Builders we'll give you the plan of your dreams 100% free.  Choose from over 50k+ house plans and let us make your dream home a reality."
+          content="Until the end of Summer when you start a custom home build with Madison Builders we'll give you the plan of your dreams 100% free.  Choose from over 50k+ house plans and let us make your dream home a reality."
         />
         <meta property="og:image" content="" />
 
@@ -37,7 +37,7 @@ const JulyPromo = ({ plans }) => {
         />
         <meta
           property="twitter:description"
-          content="For the entire month of July when you start a custom home build with Madison Builders we'll give you the plan of your dreams 100% free.  Choose from over 50k+ house plans and let us make your dream home a reality."
+          content="Until the end of Summer when you start a custom home build with Madison Builders we'll give you the plan of your dreams 100% free.  Choose from over 50k+ house plans and let us make your dream home a reality."
         />
       </Head>
       <div className="w-full container pt-28 pb-36 flex flex-col gap-2 relative">
@@ -114,9 +114,9 @@ const JulyPromo = ({ plans }) => {
           />
         </div>
 
-        <Countdown date={new Date("2022-08-01T00:00:00")} />
+        <Countdown date={new Date("2022-09-23T00:00:00")} />
         <h1 className="text-3xl text-gray-900 mt-8">
-          <strong>July Free Plan Special!</strong>
+          <strong>Summer Free Plan Special!</strong>
         </h1>
         <h2 className="text-gray-700 font-sans font-light">
           Start a new custom home build with Madison Builders and we&apos;ll
@@ -145,7 +145,7 @@ const JulyPromo = ({ plans }) => {
           </h3>
           <p className="text-sm text-gray-300 font-sans font-light">
             Want your dream house plan for free? We have you covered! For the
-            entire month of July when you start a custom home build with Madison
+            entire Summer when you start a custom home build with Madison
             Builders we&apos;ll provide the plan of your choice for free. Simply
             pick your plan from our selection of 30k+ plans, use our client
             portal to pick your finishes and get a customized estimate, then
@@ -154,7 +154,7 @@ const JulyPromo = ({ plans }) => {
           <p className="text-[11px] text-gray-400 font-sans font-light mt-2">
             <i>
               Only includes plans provided by Madison Builders, LLC. Promotion
-              ends July 31st, 2022.
+              ends September 22nd, 2022.
             </i>
           </p>
         </div>
@@ -271,6 +271,6 @@ export default JulyPromo;
 export async function getServerSideProps() {
   const plans = await fetch("https://madisonbuilders.llc/api/featuredPlans");
   return {
-    props: { plans: await plans.json() }
+    props: { plans: await plans.json() },
   };
 }

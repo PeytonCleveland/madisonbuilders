@@ -14,45 +14,45 @@ const Home = () => {
         "Be A Pioneer In The Home Building Industry. Here's What You'll Need.",
       date: "2022-06-10T21:35:22+0000",
       image:
-        "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+        "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     },
     {
       title: "5 Common Mistakes Everyone Makes In Home Building.",
       date: "2022-06-10T21:35:22+0000",
       image:
-        "https://images.unsplash.com/photo-1592595896551-12b371d546d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+        "https://images.unsplash.com/photo-1592595896551-12b371d546d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     },
     {
       title: "Blog Post 3",
       date: "2022-06-10T21:35:22+0000",
       image:
-        "https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+        "https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     },
     {
       title: "Blog Post 4",
       date: "2022-06-10T21:35:22+0000",
       image:
-        "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+        "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     },
     {
       title: "Blog Post 5",
       date: "2022-06-10T21:35:22+0000",
       image:
-        "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+        "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     },
     {
       title: "Blog Post 6",
       date: "2022-06-10T21:35:22+0000",
       image:
-        "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-    }
+        "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    },
   ];
 
   const [mortgage, setMortgage] = useState({
     amount: 350_000,
     rate: 4.5,
     term: 30,
-    downPayment: 25_000
+    downPayment: 25_000,
   });
 
   const calculatePayment = () => {
@@ -113,20 +113,20 @@ const Home = () => {
                     gtag('js', new Date());
 
                     gtag('config', 'UA-177583514-1');
-                  `
+                  `,
         }}
       />
       <div className="container pt-[200px] bg-white">
-        <div className="flex flex-col justify-end md:w-1/2 h-full md:items-start">
-          <h1 className="text-indigo-800 text-3xl md:text-5xl mb-2">
+        <div className="flex flex-col justify-end md:w-5/12 h-full md:items-start">
+          <h1 className="text-indigo-800 text-3xl md:text-[40px] md:leading-[44px] mb-2">
             Alabama&apos;s Premier <br />
             <strong>Custom Home Builder</strong>
           </h1>
-          <h2 className="text-gray-700 font-sans font-light text-sm md:text-lg md:pr-12">
+          <h2 className="text-gray-700 font-sans font-light text-sm md:text-base md:pr-12">
             We specialize in constructing the most high performing, energy
             efficient custom homes in Alabama
           </h2>
-          <div className="flex mt-6 mb-32 md:mb-24">
+          <div className="flex mt-6 mb-32 md:mb-14">
             <Link href="/process" passHref>
               <a className="flex flex-1 mr-2 whitespace-nowrap justify-center items-center border-2 border-indigo-700 text-indigo-700 px-5 md:px-6 py-[5px] font-semibold text-lg md:text-xl rounded-full hover:bg-indigo-100 hover:scale-105 duration-150 shadow-md">
                 Our Process
@@ -153,12 +153,12 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-screen bg-gradient-to-br from-indigo-700 to-indigo-800 lg:pb-12">
+      <div className="w-screen bg-gradient-to-br from-indigo-700 to-indigo-800 lg:pb-12 relative">
         <div className="container flex flex-col justify-center">
           <iframe
             width="560"
             height="315"
-            className="w-full h-[201px] -mt-16 mb-6 rounded-lg md:w-1/2 md:self-end md:h-[378px] md:-mt-[320px]"
+            className="w-full h-[201px] -mt-16 mb-6 rounded-lg md:w-1/2 md:self-end md:h-[315px] md:-mt-[260px]"
             src="https://www.youtube.com/embed/2s0zEChGQKM?autoplay=1&mute=1&enablejsapi=1"
             title="Brownstone Home"
             frameBorder="0"
@@ -168,7 +168,7 @@ const Home = () => {
           <h3 className="text-white text-xl md:text-3xl mb-2 md:w-1/2">
             Discover <strong>Our Difference</strong>
           </h3>
-          <p className="text-gray-200 font-light font-sans text-sm md:text-base mb-6 lg:pr-24 md:w-1/2">
+          <p className="text-gray-200 font-light font-sans text-sm md:text-base mb-6 lg:pr-2 md:w-1/2">
             Madison Builders is a custom home builder that is dedicated to
             utilizing the finest materials and best practices that building
             science has to offer. We pride ourselves on building beautiful,
@@ -178,14 +178,17 @@ const Home = () => {
             Learn more
           </button>
         </div>
+        <div className="absolute right-0 -bottom-[7px]">
+          <Image src="/home.png" width={370} height={370} alt="house" />
+        </div>
       </div>
 
       <div className="w-screen bg-gradient-to-br from-indigo-100 to-indigo-200 py-10">
         <div className="container flex flex-col">
-          <h3 className="text-indigo-900 text-xl mb-2">
+          <h3 className="text-indigo-900 text-xl lg:text-3xl mb-2">
             Our <strong>Process</strong>
           </h3>
-          <p className="text-gray-800 font-light font-sans text-sm mb-6 pr-8">
+          <p className="text-gray-800 font-light font-sans text-sm lg:text-base mb-6 pr-8">
             Discover how Madison Builders turns your dream home into a reality.
           </p>
           <div className="flex items-center">
@@ -278,15 +281,15 @@ const Home = () => {
 
       <div className="w-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-8 lg:py-12">
         <div className="container flex flex-col">
-          <h3 className="text-white text-xl mb-2">
+          <h3 className="text-white text-xl lg:text-3xl mb-2">
             Unmatched <strong>Transparency</strong>
           </h3>
-          <p className="text-gray-200 font-light font-sans text-sm mb-4 pr-8">
+          <p className="text-gray-200 font-light font-sans text-sm lg:text-base mb-4 pr-8">
             Madison Builders&apos; client portal allows unparalleled
             transparency into the homebuilding process.
           </p>
           <Link href="/client-portal" passHref>
-            <a className="mb-4 text-teal-300 flex items-center text-sm font-sans">
+            <a className="mb-4 text-teal-300 flex items-center text-sm lg:text-base font-sans">
               Explore client portal
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -355,7 +358,7 @@ const Home = () => {
                 parseInt(
                   e.target.value.replace(/,/g, "").replace(/\$/g, ""),
                   10
-                ) || 0
+                ) || 0,
             })
           }
           className="w-full h-10 px-4 py-2 bg-gray-200 rounded-lg shadow-md focus:outline-none focus:bg-gray-300 mb-4"
@@ -376,7 +379,7 @@ const Home = () => {
             opacity: 1,
             height: "12px",
             width: "12px",
-            marginTop: "-4px"
+            marginTop: "-4px",
           }}
         />
         <div className="flex items-center mt-4 mb-5">
@@ -408,7 +411,7 @@ const Home = () => {
                 onChange={(e) =>
                   setMortgage({
                     ...mortgage,
-                    rate: e.target.value
+                    rate: e.target.value,
                   })
                 }
                 className="w-full h-10 px-4 py-2 bg-gray-200 rounded-lg shadow-md focus:outline-none focus:bg-gray-300 group"
@@ -435,7 +438,7 @@ const Home = () => {
                 parseInt(
                   e.target.value.replace(/,/g, "").replace(/\$/g, ""),
                   10
-                ) || 0
+                ) || 0,
             })
           }
           className="w-full h-10 px-4 py-2 bg-gray-200 rounded-lg shadow-md focus:outline-none focus:bg-gray-300 mb-4"
@@ -456,7 +459,7 @@ const Home = () => {
             opacity: 1,
             height: "12px",
             width: "12px",
-            marginTop: "-4px"
+            marginTop: "-4px",
           }}
         />
 
@@ -486,7 +489,7 @@ const Home = () => {
                 className="snap-start bg-indigo-200 w-3/4 flex-shrink-0 h-[330px] mr-6 flex flex-col items-center justify-between shadow-md rounded-lg overflow-hidden"
               >
                 <div className="flex w-full h-40 min-h-[160px] relative">
-                  <Image src={post.image} layout="fill" />
+                  <Image src={post.image} layout="fill" alt="blog post" />
                 </div>
                 <div className="flex flex-col w-full h-full p-5 justify-between">
                   <div className="flex flex-col">

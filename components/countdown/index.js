@@ -1,7 +1,6 @@
 import getTimeRemaining from "../../utils/get-time-remaining";
 import { useState, useEffect } from "react";
 
-// ✅ Or create a reusable function
 function padTo2Digits(num) {
   return num.toString().padStart(2, "0");
 }
